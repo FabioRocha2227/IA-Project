@@ -90,6 +90,7 @@ while running:
                     picked_atom = True
                 else:
                     picked_atom = False
+            # Commands to choose atom
             if picked_atom == False:
                 if event.key == pygame.K_LEFT:
                     if selected_atom == 0:
@@ -101,6 +102,7 @@ while running:
                         selected_atom = 0
                     else:
                         selected_atom = selected_atom + 1
+            # Commands to move atom
             """else:
                 if event.key == pygame.K_UP:
                 if event.key == pygame.K_RIGHT:
