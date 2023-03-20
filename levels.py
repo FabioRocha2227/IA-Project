@@ -12,7 +12,8 @@ level1 = [[-1,-1,-1,-1,-1, 0, 0, 0, 0, 0, 0],
  [0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]
 
 
-atoms_list_level1 = [atom(3, 3, 2), atom(2, 8, 6), atom(1, 3, 7)]
+atoms_list_level1 = [atom(1, 3, 7), atom(2, 8, 6), atom(3, 3, 2)]
+molecule_level1 = [[1,2,3]]
 
 
 
