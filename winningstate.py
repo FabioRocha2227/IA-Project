@@ -11,6 +11,9 @@ def winning_state(level, molecule, list_atoms):
     for y in range(0, len(molecule)):
         for x in range(0, len(molecule[y])):
             if molecule[y][x] > 0:
+                if (len(level[0]) <= (x + curx)) or (len(level) <= (y + cury)):
+                    return False;
+            
                 if level[y + cury][x + curx] == molecule[y][x]:
                     natoms = natoms + 1
                     
