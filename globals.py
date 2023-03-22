@@ -1,11 +1,11 @@
 import pygame
 
 
-SQUARE_SIZE = 60
-RIGTH_OFFSET = 500
-DOWN_OFFSET = 100
+SQUARE_SIZE = 32
+RIGTH_OFFSET = 320
+DOWN_OFFSET = 75
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((720, 480))
 clock = pygame.time.Clock()

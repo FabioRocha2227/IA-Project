@@ -1,24 +1,25 @@
 import pygame
-import levels
+import numpy as np
+import data_levels
 from drawing import draw
-from movement import move_right, move_up, move_down, move_left
-from winningstate import winning_state
+from operators import move_right, move_up, move_down, move_left
+from objective_test import objective_test
+from utils import *
 
 # screen is imported - singleton
 # clock is imported
 running = True
 
 # Level variables
-level = levels.level1
-atoms_list = levels.atoms_list_level1
-molecule = levels.molecule_level1
-selected_atom = 0
+level_state = data_levels.level_1.copy()
+molecule = data_levels.molecule_level_1
+selected_atom = 1
 is_atom_picked = False
 
 
 while running:
     # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
+    # pygame.QUIT event means the user clicked X to close the game's window
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -30,33 +31,29 @@ while running:
                     is_atom_picked = False
             # Commands to choose atom
             if is_atom_picked == False:
+                if event.key == pygame.K_UP:
+                    selected_atom = select_atom_up(level_state, selected_atom)
+                if event.key == pygame.K_DOWN:
+                    selected_atom = select_atom_down(level_state, selected_atom)
                 if event.key == pygame.K_LEFT:
-                    if selected_atom == 0:
-                        selected_atom = len(atoms_list) - 1                 
-                    else:
-                        selected_atom = selected_atom - 1
+                    selected_atom = select_atom_left(level_state, selected_atom)
                 if event.key == pygame.K_RIGHT:
-                    if selected_atom == len(atoms_list) - 1:
-                        selected_atom = 0
-                    else:
-                        selected_atom = selected_atom + 1
+                    selected_atom = select_atom_right(level_state, selected_atom)
             # Commands to move atom
             else:
                 if event.key == pygame.K_UP:
-                    move_up(level, atoms_list, selected_atom)  
+                    level_state = move_up(level_state, selected_atom)
                 if event.key == pygame.K_DOWN:
-                    move_down(level, atoms_list, selected_atom)  
+                    level_state = move_down(level_state, selected_atom)
                 if event.key == pygame.K_LEFT: 
-                    move_left(level, atoms_list, selected_atom)  
+                    level_state = move_left(level_state, selected_atom)  
                 if event.key == pygame.K_RIGHT: 
-                     move_right(level, atoms_list, selected_atom)  
+                    level_state = move_right(level_state, selected_atom)  
                 
-
-                # TODO: Check winning state after movement
-                if winning_state(level, molecule, atoms_list):
+                # Check winning state after movement
+                if objective_test(level_state, molecule):
                     running = False
 
-
-    draw(level, atoms_list, selected_atom, is_atom_picked)
+    draw(level_state, selected_atom, is_atom_picked)
 
 pygame.quit()
