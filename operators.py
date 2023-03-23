@@ -1,5 +1,6 @@
 from drawing import draw
 import numpy as np
+from data_levels import timeout_level_1
 
 
 
@@ -14,7 +15,6 @@ def move_down(level_state, selected_atom):
       new_state[selected_atom_y + 1][selected_atom_x] = new_state[selected_atom_y][selected_atom_x]
       new_state[selected_atom_y][selected_atom_x] = tmp
       selected_atom_y += 1
-      draw(new_state, selected_atom, True, movement=True)
   
   return new_state
 
@@ -31,7 +31,6 @@ def move_up(level_state, selected_atom):
       new_state[selected_atom_y - 1][selected_atom_x] = new_state[selected_atom_y][selected_atom_x]
       new_state[selected_atom_y][selected_atom_x] = tmp
       selected_atom_y -= 1
-      draw(new_state, selected_atom, True, movement=True)
 
   return new_state
 
@@ -48,7 +47,6 @@ def move_left(level_state, selected_atom):
       new_state[selected_atom_y][selected_atom_x - 1] = new_state[selected_atom_y][selected_atom_x]
       new_state[selected_atom_y][selected_atom_x] = tmp
       selected_atom_x -= 1
-      draw(new_state, selected_atom, True, movement=True)
   
   return new_state
 
@@ -65,6 +63,5 @@ def move_right(level_state, selected_atom):
       new_state[selected_atom_y][selected_atom_x + 1] = new_state[selected_atom_y][selected_atom_x]
       new_state[selected_atom_y][selected_atom_x] = tmp
       selected_atom_x += 1
-      draw(new_state, selected_atom, True, movement=True)
 
   return new_state

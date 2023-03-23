@@ -11,6 +11,7 @@ wall_intern = pygame.image.load("sprites/wall_intern.png")
 wall_intern = pygame.transform.scale(wall_intern, (SQUARE_SIZE, SQUARE_SIZE))
 
 
+
 # Levels
 
 # Level 1
@@ -29,8 +30,9 @@ level_1 = np.array([[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3],
 molecule_level_1 = [[1,2,3]]
 
 total_atoms_level_1 = 3
+timeout_level_1 = 120
 
-background_level_1 = "#F1DDBF"
+background_level_1 = "#2F2D29"#F1DDBF"
 background_secondary_level_1 = "#FFB562"
 
 atom_H_rigth = pygame.image.load("sprites/H_right.png")

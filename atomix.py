@@ -1,10 +1,12 @@
 import pygame
 import numpy as np
+import time
 import data_levels
-from drawing import draw
+from drawing import draw, draw_movement
 from operators import move_right, move_up, move_down, move_left
 from objective_test import objective_test
 from utils import *
+from globals import timer_event
 
 # screen is imported - singleton
 # clock is imported
@@ -15,7 +17,6 @@ level_state = data_levels.level_1.copy()
 molecule = data_levels.molecule_level_1
 selected_atom = 1
 is_atom_picked = False
-
 
 while running:
     # poll for events
@@ -42,18 +43,28 @@ while running:
             # Commands to move atom
             else:
                 if event.key == pygame.K_UP:
-                    level_state = move_up(level_state, selected_atom)
+                    new_state = move_up(level_state, selected_atom)
+                    draw_movement(level_state, new_state, selected_atom, data_levels.timeout_level_1)
                 if event.key == pygame.K_DOWN:
-                    level_state = move_down(level_state, selected_atom)
+                    new_state = move_down(level_state, selected_atom)
+                    draw_movement(level_state, new_state, selected_atom, data_levels.timeout_level_1)
                 if event.key == pygame.K_LEFT: 
-                    level_state = move_left(level_state, selected_atom)  
+                    new_state = move_left(level_state, selected_atom)  
+                    draw_movement(level_state, new_state, selected_atom, data_levels.timeout_level_1)
                 if event.key == pygame.K_RIGHT: 
-                    level_state = move_right(level_state, selected_atom)  
+                    new_state = move_right(level_state, selected_atom)
+                    draw_movement(level_state, new_state, selected_atom, data_levels.timeout_level_1)  
                 
                 # Check winning state after movement
                 if objective_test(level_state, molecule):
                     running = False
+        elif event.type == timer_event:
+            data_levels.timeout_level_1 -= 1
+            if data_levels.timeout_level_1 == 0:
+                print("GAMEOVER")
+                time.sleep(1.5)
+                running = False
 
-    draw(level_state, selected_atom, is_atom_picked)
+    draw(level_state, selected_atom, is_atom_picked, data_levels.timeout_level_1)
 
 pygame.quit()
