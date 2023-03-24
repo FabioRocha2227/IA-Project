@@ -4,11 +4,11 @@ from globals import SQUARE_SIZE, RIGTH_OFFSET, DOWN_OFFSET, screen, clock, font,
 from data_levels import *
 
 
-def draw_player_position(level_state, selected_atom, picked_atom):
-    selected_atom_index = np.where(level_state == selected_atom)
+def draw_player_position(level):
+    selected_atom_index = np.where(level.state == level.selected_atom)
     selected_atom_x, selected_atom_y = selected_atom_index[1][0], selected_atom_index[0][0]
     color = "red"
-    if picked_atom == True:
+    if level.is_atom_picked == True:
         color = "yellow"
     pygame.draw.rect(screen, color, pygame.Rect(selected_atom_x * SQUARE_SIZE + RIGTH_OFFSET, selected_atom_y * SQUARE_SIZE + DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE), 3)
 
@@ -66,63 +66,62 @@ def refresh():
     
 
 
-def draw(level_state, selected_atom, picked_atom, level_timeout, movement=False):  
- # fill the screen with a color to wipe away anything from last frame
-    #screen.fill("#D8D8D8")
-    screen.fill(background_level_1)
+def draw(level, movement=False):  
+    screen.fill(level.background_window)
 
-    for i in range(0, len(level_state[0])):
-        for j in range(0, len(level_state)):
-            if level_state[j][i] == -2:
+    # Draw state
+    for i in range(0, len(level.state[0])):
+        for j in range(0, len(level.state)):
+            if level.state[j][i] == -2:
                 screen.blit(wall_extern, (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
                 #pygame.draw.rect(screen, "gray", pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
-            elif level_state[j][i] == -1:
+            elif level.state[j][i] == -1:
                 screen.blit(wall_intern, (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
-            elif level_state[j][i] == 0:
-                pygame.draw.rect(screen, background_secondary_level_1, pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
-            elif level_state[j][i] > 0:
-                pygame.draw.rect(screen, background_secondary_level_1, pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
-                if level_state[j][i] == selected_atom and not movement:
-                    draw_player_position(level_state, selected_atom, picked_atom)
+            elif level.state[j][i] == 0:
+                pygame.draw.rect(screen, level.background_state, pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
+            elif level.state[j][i] > 0:
+                pygame.draw.rect(screen, level.background_state, pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
+                if level.state[j][i] == level.selected_atom and not movement:
+                    draw_player_position(level)
                 #if not movement:  
-                screen.blit(sprites_level_1[level_state[j][i]], (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
+                screen.blit(sprites_level_1[level.state[j][i]], (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
 
     draw_text()
     draw_scores()
-    draw_timeout(level_timeout)
+    draw_timeout(level.timeout)
 
     refresh()
 
 
 
-def draw_movement(old_state, new_state, selected_atom, level_timeout):
-    atom_index_old_state = np.where(old_state == selected_atom)
+def draw_movement(level, new_state):
+    atom_index_old_state = np.where(level.state == level.selected_atom)
     old_state_atom_x, old_state_atom_y = atom_index_old_state[1][0], atom_index_old_state[0][0]
-    atom_index_new_state = np.where(new_state == selected_atom)
+    atom_index_new_state = np.where(new_state == level.selected_atom)
     new_state_atom_x, new_state_atom_y = atom_index_new_state[1][0], atom_index_new_state[0][0]
 
     # Vertical direction
     while new_state_atom_y != old_state_atom_y:
-        old_state[old_state_atom_y][old_state_atom_x] = 0
+        level.state[old_state_atom_y][old_state_atom_x] = 0
 
         if old_state_atom_y > new_state_atom_y:
             old_state_atom_y -= 1
         else:
             old_state_atom_y += 1
 
-        old_state[old_state_atom_y][old_state_atom_x] = selected_atom
+        level.state[old_state_atom_y][old_state_atom_x] = level.selected_atom
 
-        draw(old_state, selected_atom, True, level_timeout, movement=True)
+        draw(level, movement=True)
      
     # Horizontal direction
     while new_state_atom_x != old_state_atom_x:
-        old_state[old_state_atom_y][old_state_atom_x] = 0
+        level.state[old_state_atom_y][old_state_atom_x] = 0
 
         if old_state_atom_x > new_state_atom_x:
             old_state_atom_x -= 1
         else:
             old_state_atom_x += 1
 
-        old_state[old_state_atom_y][old_state_atom_x] = selected_atom
+        level.state[old_state_atom_y][old_state_atom_x] = level.selected_atom
 
-        draw(old_state, selected_atom, True, level_timeout, movement=True)
+        draw(level, movement=True)

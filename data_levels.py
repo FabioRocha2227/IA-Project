@@ -1,6 +1,7 @@
 import pygame
 import numpy as np
 from globals import SQUARE_SIZE
+from level import Level
 
 # Global sprites
 
@@ -16,7 +17,7 @@ wall_intern = pygame.transform.scale(wall_intern, (SQUARE_SIZE, SQUARE_SIZE))
 
 # Level 1
 
-level_1 = np.array([[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3],
+initial_state_level_1 = np.array([[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3],
                     [-2, 0, 0, 0,-2,-3,-3,-3,-3,-3,-3],
                     [-2, 0, 0, 3,-2,-2,-2,-2,-2,-2,-3],
                     [-2, 0, 0,-1, 0, 0, 0, 0, 0,-2,-3],
@@ -32,8 +33,8 @@ molecule_level_1 = [[1,2,3]]
 total_atoms_level_1 = 3
 timeout_level_1 = 120
 
-background_level_1 = "#2F2D29"#F1DDBF"
-background_secondary_level_1 = "#FFB562"
+background_window_level_1 = "#2F2D29"#F1DDBF"
+background_state_level_1 = "#FFB562"
 
 atom_H_rigth = pygame.image.load("sprites/H_right.png")
 atom_H_rigth = pygame.transform.scale(atom_H_rigth, (SQUARE_SIZE, SQUARE_SIZE))
@@ -47,3 +48,9 @@ atom_H_left = pygame.transform.scale(atom_H_left, (SQUARE_SIZE, SQUARE_SIZE))
 sprites_level_1 = [0, atom_H_rigth, atom_O_left_rigth, atom_H_left]
 
 # Level 2
+
+
+# Levels list
+level_1 = Level(initial_state_level_1, molecule_level_1, total_atoms_level_1, timeout_level_1, sprites_level_1, background_window_level_1, background_state_level_1)
+
+levels = [level_1]
