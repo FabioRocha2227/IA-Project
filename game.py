@@ -3,7 +3,7 @@ import time
 from drawing import draw, draw_movement
 from operators import move_right, move_up, move_down, move_left
 from objective_test import objective_test
-from utils import *
+from utils_player import *
 from globals import timer_event
 
 
@@ -38,21 +38,23 @@ def play(level):
                 # Commands to move atom
                 else:
                     if event.key == pygame.K_UP:
-                        new_state = move_up(level)
+                        new_state = move_up(level.state, level.selected_atom)
                         draw_movement(level, new_state)
                     if event.key == pygame.K_DOWN:
-                        new_state = move_down(level)
+                        new_state = move_down(level.state, level.selected_atom)
                         draw_movement(level, new_state)
                     if event.key == pygame.K_LEFT:
-                        new_state = move_left(level)  
+                        new_state = move_left(level.state, level.selected_atom)  
                         draw_movement(level, new_state)
                     if event.key == pygame.K_RIGHT: 
-                        new_state = move_right(level)
+                        new_state = move_right(level.state, level.selected_atom)
                         draw_movement(level, new_state)
                     
                     # Check winning state after movement
                     if objective_test(level.state, level.molecule):
                         playing = False
+                        print("WIN")
+                        time.sleep(1.5)
             elif event.type == timer_event:
                 level.timeout -= 1
                 if level.timeout == 0:
