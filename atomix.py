@@ -11,8 +11,8 @@ level = levels[0]
 
 
 
-goal = iterative_deepening_search(level, 5)
-print_solution(goal)
+""" goal = iterative_deepening_search(level, 5)
+print_solution(goal) """
 
 """ goal = breadth_first_search(level)
 print_solution(goal) """

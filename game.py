@@ -38,20 +38,20 @@ def play(level):
                 # Commands to move atom
                 else:
                     if event.key == pygame.K_UP:
-                        new_state = move_up(level.state, level.selected_atom)
+                        new_state = move_up(level.matrix, level.selected_atom, level.atoms_list)
                         draw_movement(level, new_state)
                     if event.key == pygame.K_DOWN:
-                        new_state = move_down(level.state, level.selected_atom)
+                        new_state = move_down(level.matrix, level.selected_atom, level.atoms_list)
                         draw_movement(level, new_state)
                     if event.key == pygame.K_LEFT:
-                        new_state = move_left(level.state, level.selected_atom)  
+                        new_state = move_left(level.matrix, level.selected_atom, level.atoms_list)  
                         draw_movement(level, new_state)
                     if event.key == pygame.K_RIGHT: 
-                        new_state = move_right(level.state, level.selected_atom)
+                        new_state = move_right(level.matrix, level.selected_atom, level.atoms_list)
                         draw_movement(level, new_state)
                     
                     # Check winning state after movement
-                    if objective_test(level.state, level.molecule):
+                    if objective_test(level.matrix, level.atoms_list, level.molecule):
                         playing = False
                         print("WIN")
                         time.sleep(1.5)

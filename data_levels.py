@@ -45,7 +45,7 @@ atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (SQUARE_SIZE, SQUA
 atom_H_left = pygame.image.load("sprites/H_left.png")
 atom_H_left = pygame.transform.scale(atom_H_left, (SQUARE_SIZE, SQUARE_SIZE))
 
-sprites_level_1 = [0, atom_H_rigth, atom_O_left_rigth, atom_H_left]
+sprites_level_1 = [atom_H_rigth, atom_O_left_rigth, atom_H_left]
 
 # Level 2
 

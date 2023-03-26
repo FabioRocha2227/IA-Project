@@ -1,4 +1,52 @@
-import numpy as np
+
+def select_atom_up(level):
+    selected_y = level.atoms_list[level.selected_atom][1]
+
+    nearest_y = 0
+
+    for i in range(len(level.atoms_list)):
+        if i != level.selected_atom and level.atoms_list[i][1] < selected_y:
+            if level.atoms_list[i][1] > nearest_y:
+                nearest_y = level.atoms_list[i][1]
+                level.selected_atom = i
+
+def select_atom_down(level):
+    selected_y = level.atoms_list[level.selected_atom][1]
+
+    nearest_y = len(level.matrix)
+
+    for i in range(len(level.atoms_list)):
+        if i != level.selected_atom and level.atoms_list[i][1] > selected_y:
+            if level.atoms_list[i][1] < nearest_y:
+                nearest_y = level.atoms_list[i][1]
+                level.selected_atom = i
+
+def select_atom_left(level):
+    selected_x = level.atoms_list[level.selected_atom][0]
+
+    nearest_x = 0
+
+    for i in range(len(level.atoms_list)):
+        if i != level.selected_atom and level.atoms_list[i][0] < selected_x:
+            if level.atoms_list[i][0] > nearest_x:
+                nearest_x = level.atoms_list[i][0]
+                level.selected_atom = i
+
+def select_atom_right(level):
+    selected_x = level.atoms_list[level.selected_atom][0]
+
+    nearest_x = len(level.matrix[0])
+
+    for i in range(len(level.atoms_list)):
+        if i != level.selected_atom and level.atoms_list[i][0] > selected_x:
+            if level.atoms_list[i][0] < nearest_x:
+                nearest_x = level.atoms_list[i][0]
+                level.selected_atom = i
+
+
+
+
+""" import numpy as np
 
 
 
@@ -128,3 +176,4 @@ def select_atom_right(level):
                     
                 if y_offset == 0:
                     break
+ """
