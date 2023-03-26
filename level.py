@@ -10,6 +10,6 @@ class Level():
         self.background_window = background_window
         self.background_matrix = background_matrix
         
-        self.selected_atom = 1
+        self.selected_atom = 0
         self.is_atom_picked = False
     

@@ -3,8 +3,10 @@ from operators import *
 import numpy as np
 
 class TreeNode:
-    def __init__(self, state, parent=None):
+    def __init__(self, state, cost=0, heuristic=0, parent=None):
         self.state = state.copy()
+        self.cost = cost
+        self.heuristic = heuristic
         self.parent = parent
         self.children = []
         if self.parent is None:
@@ -16,7 +18,9 @@ class TreeNode:
         self.children.append(child_node)
         child_node.parent = self
 
-
+    def __lt__(self, other):
+        return self.cost + self.heuristic < other.cost + other.heuristic
+        
 
 
 def get_child_states(level_matrix, state):
@@ -41,5 +45,6 @@ def print_solution(node):
 
     for i in solution:
         print(i.state)
+        print(i.cost)
 
     return

@@ -30,6 +30,8 @@ matrix_level_1 =   [[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3],
 
 molecule_level_1 = [[0,1,2]]
 atoms_list_level_1 = [[3,7], [8,6], [3,2]]
+#molecule_level_1 = [[0,1,2,-1],[-1,-1,3,4]]
+#atoms_list_level_1 = [[1,2],[2,2],[3,2],[3,3],[4,3]]
 
 timeout_level_1 = 120
 

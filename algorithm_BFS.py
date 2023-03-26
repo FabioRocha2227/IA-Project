@@ -6,8 +6,7 @@ def breadth_first_search(level):
     root = TreeNode(level.atoms_list)   # create the root node in the search tree
     queue = deque([root])   # initialize the queue to store the nodes
 
-    visited_states = []
-    visited_states.append(root.state)
+    visited_states = [root.state]
     
     while queue:
         node = queue.popleft()   # get first element in the queue
