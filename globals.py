@@ -11,7 +11,7 @@ TEXT_ALERT_COLOR = "red"
 
 # pygame setup
 pygame.init()
-screen = pygame.display.set_mode((720, 480))
+screen = pygame.display.set_mode((800, 500))
 pygame.display.set_caption('Atomix (Group 86)')
 clock = pygame.time.Clock()
 

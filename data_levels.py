@@ -51,11 +51,56 @@ sprites_level_1 = [atom_H_rigth, atom_O_left_rigth, atom_H_left]
 
 # Level 2
 
+matrix_level_2 =   [[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0, 0,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0, 0,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+                    [-2, 0,-1, 0,-1, 0,-1, 0, 0, 0, 0, 0, 0,-2],
+                    [-2, 0,-1, 0,-1, 0,-1, 0, 0, 0,-1, 0, 0,-2],
+                    [-2, 0, 0,-1, 0, 0,-1,-1,-1,-1,-1, 0, 0,-2],
+                    [-2, 0, 0, 0, 0, 0, 0, 0,-1, 0, 0, 0, 0,-2],
+                    [-2, 0, 0, 0, 0, 0, 0, 0,-1, 0, 0, 0, 0,-2],
+                    [-2, 0,-1,-1,-1,-1,-1, 0, 0, 0, 0, 0, 0,-2],
+                    [-2, 0, 0, 0,-1, 0, 0,-2,-2,-2,-2,-2,-2,-2],
+                    [-2,-2,-2,-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3]]
+
+molecule_level_2 = [[-1, 0,-1],
+                    [ 1, 2, 3],
+                    [-1, 4,-1]]
+atoms_list_level_2 = [[9,4], [2,5], [5,4], [8,8], [3,9]]
+
+atom_H_up = pygame.transform.rotate(atom_H_rigth, 90)
+atom_H_down = pygame.transform.rotate(atom_H_left, 90)
+
+sprites_level_2 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
 
 
 
+#Level 3
+
+matrix_level_3 =   [[-2,-2,-2,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
+                    [-2, 0, 0,-2,-2,-2,-2,-2,-2,-2,-2,-3,-3],
+                    [-2, 0, 0, 0,-1, 0, 0, 0,-1, 0,-2,-2,-2],
+                    [-2, 0,-1, 0, 0, 0, 0, 0,-1, 0, 0, 0,-2],
+                    [-2, 0, 0, 0, 0, 0, 0, 0,-1, 0, 0, 0,-2],
+                    [-2, 0, 0,-1,-1,-1, 0, 0,-1, 0,-1, 0,-2],
+                    [-2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,-2],
+                    [-2, 0, 0, 0, 0, 0, 0,-1, 0, 0,-1, 0,-2],
+                    [-2,-2,-2,-2,-2,-2, 0, 0, 0, 0,-1, 0,-2],
+                    [-3,-3,-3,-3,-3,-2,-2,-2,-2,-2,-2,-2,-2]]
+
+molecule_level_3 = [[-1, 0,-1,-1],
+                    [ 1, 2, 3, 4],
+                    [-1, 5,-1,-1]]
+atoms_list_level_3 = [[2,3], [2,8], [9,7], [6,8], [8,10], [5,10]]
+
+sprites_level_3 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
 
 # Levels list
 level_1 = Level(matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_level_1, sprites_level_1, background_window_level_1, background_matrix_level_1)
+level_2 = Level(matrix_level_2, molecule_level_2, atoms_list_level_2, timeout_level_1, sprites_level_2, background_window_level_1, background_matrix_level_1)
+level_3 = Level(matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_1, sprites_level_3, background_window_level_1, background_matrix_level_1)
 
-levels = [level_1]
+levels = [level_1, level_2, level_3]
