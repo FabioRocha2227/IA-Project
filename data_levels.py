@@ -5,10 +5,13 @@ from level import Level
 
 # Global sprites
 
-wall_extern = pygame.image.load("sprites/wall_extern.png")
+atomix_logo = pygame.image.load("assets/sprites/Atomix_logo.png")
+atomix_logo = pygame.transform.scale(atomix_logo, (256, 270))
+
+wall_extern = pygame.image.load("assets/sprites/wall_extern.png")
 wall_extern = pygame.transform.scale(wall_extern, (SQUARE_SIZE, SQUARE_SIZE))
 
-wall_intern = pygame.image.load("sprites/wall_intern.png")
+wall_intern = pygame.image.load("assets/sprites/wall_intern.png")
 wall_intern = pygame.transform.scale(wall_intern, (SQUARE_SIZE, SQUARE_SIZE))
 
 
@@ -38,15 +41,15 @@ timeout_level_1 = 120
 background_window_level_1 = "#2F2D29"#F1DDBF"
 background_matrix_level_1 = "#FFB562"
 
-atom_H_rigth = pygame.image.load("sprites/H_right.png")
+atom_H_rigth = pygame.image.load("assets/sprites/H_right.png")
 atom_H_rigth = pygame.transform.scale(atom_H_rigth, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_H_rigth = pygame.transform.scale(atom_H_rigth, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
-atom_O_left_rigth = pygame.image.load("sprites/O_left_right.png")
+atom_O_left_rigth = pygame.image.load("assets/sprites/O_left_right.png")
 atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
-atom_H_left = pygame.image.load("sprites/H_left.png")
+atom_H_left = pygame.image.load("assets/sprites/H_left.png")
 atom_H_left = pygame.transform.scale(atom_H_left, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_H_left = pygame.transform.scale(atom_H_left, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
