@@ -22,8 +22,9 @@ def depth_limited_search(level, node, depth, visited=None):
         
         for state in get_child_states(level.matrix, node.state):
             if state not in visited:
+                print(state)
                 visited.append(state)
-                child = TreeNode(state, node)
+                child = TreeNode(state, parent=node)
                 node.add_child(child)
                 result = depth_limited_search(level, child, depth-1, visited)
                 if result == 'cutoff':

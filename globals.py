@@ -2,6 +2,7 @@ import pygame
 
 
 SQUARE_SIZE = 32
+MOLECULE_SQUARE_SIZE = 16
 
 RIGTH_OFFSET = 320
 DOWN_OFFSET = 75
@@ -18,6 +19,7 @@ clock = pygame.time.Clock()
 # Text
 #font = pygame.font.Font('freesansbold.ttf', 32)
 font = pygame.font.SysFont(",", 18)
+font_molecule_name = pygame.font.SysFont(",", 14)
 font_level_timeout = pygame.font.SysFont(",", 48)
 game_text_score = ["PLAYER 1", "HIGHSCORE"]
 game_text_level = ["LEVEL", "TIME"]

@@ -12,15 +12,19 @@ def breadth_first_search(level):
         node = queue.popleft()   # get first element in the queue
         if objective_test(level.matrix, node.state, level.molecule):   # check goal state
             return node
-        
+                
+        #print(visited_states)
+
         for state in get_child_states(level.matrix, node.state):   # go through next states
             if state not in visited_states:
                 # create tree node with the new state
-                child = TreeNode(state, node)
+                child = TreeNode(state, parent=node)
+                
+                visited_states.append(state)
                 
                 # link child node to its parent in the tree
                 node.add_child(child)
-                visited_states.append(child.state)
+                
                 # enqueue the child node
                 queue.append(child)
         

@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-from globals import SQUARE_SIZE, RIGTH_OFFSET, DOWN_OFFSET, screen, clock, font, font_level_timeout, game_text_score, game_text_level, TEXT_COLOR, TEXT_ALERT_COLOR
+from globals import SQUARE_SIZE, RIGTH_OFFSET, DOWN_OFFSET, screen, clock, font, font_molecule_name, font_level_timeout, game_text_score, game_text_level, TEXT_COLOR, TEXT_ALERT_COLOR
 from data_levels import *
 from data_levels import wall_extern, wall_intern
 
@@ -29,7 +29,11 @@ def draw_text():
 
         # Info about the level and its timeout
         text = font.render(game_text_level[i], True, TEXT_COLOR, None)
-        screen.blit(text, (50, ((i + 1) * 50 + 100)))
+        screen.blit(text, (50, ((i + 1) * 70 + 80)))
+
+    # Current level
+    text = font_level_timeout.render("1", True, TEXT_COLOR, None)
+    screen.blit(text, (50, 170))
 
 
 
@@ -58,7 +62,21 @@ def draw_timeout(level_timeout):
         color = TEXT_ALERT_COLOR
 
     text = font_level_timeout.render(timeout, True, color, None)
-    screen.blit(text, (50, 230))
+    screen.blit(text, (50, 240))
+
+
+
+def draw_molecule(level):
+    pygame.draw.rect(screen, "#1B1B1B", pygame.Rect(50, 300, 125, 150))
+    pygame.draw.rect(screen, "#131313", pygame.Rect(50, 300, 125, 150), 3)
+    pygame.draw.rect(screen, "#363636", pygame.Rect(53, 303, 120, 25))
+    text = font.render("- MOLECULE -", True, "#9D9D9D", None)
+    screen.blit(text, (72, 310))
+    text = font_molecule_name.render("WATER", True, "#787878", None)
+    screen.blit(text, (95, 335))
+    for i in range(0, len(level.molecule)):
+        for j in range(0, len(level.molecule[0])):
+            screen.blit(level.molecule_sprites[level.molecule[i][j]], (88 + j * MOLECULE_SQUARE_SIZE, 355 + i * MOLECULE_SQUARE_SIZE))
 
 
 
@@ -91,6 +109,7 @@ def draw(level, movement=False):
     draw_text()
     draw_scores()
     draw_timeout(level.timeout)
+    draw_molecule(level)
 
     refresh()
 

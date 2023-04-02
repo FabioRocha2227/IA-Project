@@ -45,6 +45,6 @@ def print_solution(node):
 
     for i in solution:
         print(i.state)
-        print(i.cost)
+        #print(i.cost)
 
     return

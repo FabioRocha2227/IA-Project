@@ -1,4 +1,4 @@
-from objective_test import evaluate_missing_links
+
 
 def evaluate_distances(atoms_list):
     distances = 0
@@ -13,5 +13,5 @@ def evaluate_distances(atoms_list):
 
     return distances
 
-def evaluate_links_and_distances(level_matrix, atoms_list, molecule):
-    return evaluate_missing_links(level_matrix, atoms_list, molecule) * evaluate_distances(atoms_list)
+""" def evaluate_links_and_distances(level_matrix, atoms_list, molecule):
+    return evaluate_missing_links(level_matrix, atoms_list, molecule) * evaluate_distances(atoms_list) """
