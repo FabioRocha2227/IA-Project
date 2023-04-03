@@ -7,7 +7,7 @@ from queue import PriorityQueue
 def greedy_best_first_search(level):
     start = TreeNode(level.atoms_list, heuristic=evaluate_links_and_distances(level.matrix, level.atoms_list, level.molecule))
     queue = PriorityQueue()
-    queue.put((evaluate_distances(start.state), start))
+    queue.put((evaluate_links_and_distances(level.matrix, start.state, level.molecule), start))
     visited = []
 
     while not queue.empty():
@@ -20,7 +20,7 @@ def greedy_best_first_search(level):
             if state not in visited:
                 child = TreeNode(state, heuristic=evaluate_links_and_distances(level.matrix, state, level.molecule), parent=current)
                 current.add_child(child)
-                queue.put((evaluate_distances(child.state), child))
+                queue.put((evaluate_links_and_distances(level.matrix, child.state, level.molecule), child))
 
     return None
 
