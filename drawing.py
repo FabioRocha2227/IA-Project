@@ -285,7 +285,8 @@ def draw_molecule(level):
     screen.blit(text, (95, 335))
     for i in range(0, len(level.molecule)):
         for j in range(0, len(level.molecule[0])):
-            screen.blit(level.molecule_sprites[level.molecule[i][j]], (88 + j * MOLECULE_SQUARE_SIZE, 355 + i * MOLECULE_SQUARE_SIZE))
+            if level.molecule[i][j] >= 0:
+                screen.blit(level.molecule_sprites[level.molecule[i][j]], (88 + j * MOLECULE_SQUARE_SIZE, 355 + i * MOLECULE_SQUARE_SIZE))
 
 
 

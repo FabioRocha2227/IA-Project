@@ -1,11 +1,11 @@
 from utils_algorithms import TreeNode, get_child_states
 from objective_test import *
-from evaluation_function import evaluate_distances
+from evaluation_function import evaluate_distances, evaluate_links_and_distances
 from queue import PriorityQueue
 
 
 def greedy_best_first_search(level):
-    start = TreeNode(level.atoms_list, heuristic=evaluate_distances(level.atoms_list))
+    start = TreeNode(level.atoms_list, heuristic=evaluate_links_and_distances(level.matrix, level.atoms_list, level.molecule))
     queue = PriorityQueue()
     queue.put((evaluate_distances(start.state), start))
     visited = []
@@ -18,7 +18,7 @@ def greedy_best_first_search(level):
         visited.append(current.state)
         for state in get_child_states(level.matrix, current.state):
             if state not in visited:
-                child = TreeNode(state, heuristic=evaluate_distances(state), parent=current)
+                child = TreeNode(state, heuristic=evaluate_links_and_distances(level.matrix, state, level.molecule), parent=current)
                 current.add_child(child)
                 queue.put((evaluate_distances(child.state), child))
 

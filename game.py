@@ -160,22 +160,26 @@ def play(level):
                 goal = greedy_best_first_search(level)
                 solution = print_solution(goal)
                 draw_solution(level, solution)
+                time.sleep(1.5)
                 playing = False
             elif level.player == 2:
                 draw(level)
                 goal = breadth_first_search(level)
                 solution = print_solution(goal)
                 draw_solution(level, solution)
+                time.sleep(1.5)
                 playing = False
             elif level.player == 3:
                 draw(level)
                 goal = a_star(level)
                 solution = print_solution(goal)
                 draw_solution(level, solution)
+                time.sleep(1.5)
                 playing = False
             elif level.player == 4:
                 draw(level)
                 goal = iterative_deepening_search(level, 10)
                 solution = print_solution(goal)
                 draw_solution(level, solution)
+                time.sleep(1.5)
                 playing = False

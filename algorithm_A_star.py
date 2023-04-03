@@ -1,5 +1,5 @@
 from utils_algorithms import TreeNode, get_child_states
-from evaluation_function import evaluate_distances
+from evaluation_function import evaluate_distances, evaluate_links_and_distances
 from objective_test import objective_test
 from queue import PriorityQueue
 
@@ -7,7 +7,7 @@ from queue import PriorityQueue
 
 def a_star(level):
     frontier = PriorityQueue()
-    root = TreeNode(level.atoms_list, cost=0, heuristic=evaluate_distances(level.atoms_list))
+    root = TreeNode(level.atoms_list, cost=0, heuristic=evaluate_links_and_distances(level.matrix, level.atoms_list, level.molecule))
     frontier.put(root)
     visited = [root.state]
 
@@ -25,7 +25,7 @@ def a_star(level):
                 continue
 
             child_cost = current_node.cost + 1  # assuming edge cost of 1
-            child_heuristic = evaluate_distances(child_state)
+            child_heuristic = evaluate_links_and_distances(level.matrix, child_state, level.molecule)
             child_node = TreeNode(child_state, cost=child_cost, heuristic=child_heuristic, parent=current_node)
             frontier.put(child_node)
 
