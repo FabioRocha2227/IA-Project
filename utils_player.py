@@ -1,46 +1,46 @@
 
 def select_atom_up(level):
-    selected_y = level.atoms_list[level.selected_atom][1]
+    selected_y = level.atoms_list[level.selected_atom].y
 
     nearest_y = 0
 
     for i in range(len(level.atoms_list)):
-        if i != level.selected_atom and level.atoms_list[i][1] < selected_y:
-            if level.atoms_list[i][1] > nearest_y:
-                nearest_y = level.atoms_list[i][1]
+        if i != level.selected_atom and level.atoms_list[i].y < selected_y:
+            if level.atoms_list[i].y > nearest_y:
+                nearest_y = level.atoms_list[i].y
                 level.selected_atom = i
 
 def select_atom_down(level):
-    selected_y = level.atoms_list[level.selected_atom][1]
+    selected_y = level.atoms_list[level.selected_atom].y
 
     nearest_y = len(level.matrix)
 
     for i in range(len(level.atoms_list)):
-        if i != level.selected_atom and level.atoms_list[i][1] > selected_y:
-            if level.atoms_list[i][1] < nearest_y:
-                nearest_y = level.atoms_list[i][1]
+        if i != level.selected_atom and level.atoms_list[i].y > selected_y:
+            if level.atoms_list[i].y < nearest_y:
+                nearest_y = level.atoms_list[i].y
                 level.selected_atom = i
 
 def select_atom_left(level):
-    selected_x = level.atoms_list[level.selected_atom][0]
+    selected_x = level.atoms_list[level.selected_atom].x
 
     nearest_x = 0
 
     for i in range(len(level.atoms_list)):
-        if i != level.selected_atom and level.atoms_list[i][0] < selected_x:
-            if level.atoms_list[i][0] > nearest_x:
-                nearest_x = level.atoms_list[i][0]
+        if i != level.selected_atom and level.atoms_list[i].x < selected_x:
+            if level.atoms_list[i].x > nearest_x:
+                nearest_x = level.atoms_list[i].x
                 level.selected_atom = i
 
 def select_atom_right(level):
-    selected_x = level.atoms_list[level.selected_atom][0]
+    selected_x = level.atoms_list[level.selected_atom].x
 
     nearest_x = len(level.matrix[0])
 
     for i in range(len(level.atoms_list)):
-        if i != level.selected_atom and level.atoms_list[i][0] > selected_x:
-            if level.atoms_list[i][0] < nearest_x:
-                nearest_x = level.atoms_list[i][0]
+        if i != level.selected_atom and level.atoms_list[i].x > selected_x:
+            if level.atoms_list[i].x < nearest_x:
+                nearest_x = level.atoms_list[i].x
                 level.selected_atom = i
 
 

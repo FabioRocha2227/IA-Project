@@ -1,5 +1,4 @@
 
-
 def evaluate_distances(atoms_list):
     distances = 0
     next_atom = 0
@@ -9,7 +8,7 @@ def evaluate_distances(atoms_list):
             if next_atom >= len(atoms_list):
                 next_atom = i
                 break
-            distances += abs(atoms_list[i][0] - atoms_list[next_atom][0]) + abs(atoms_list[i][1] - atoms_list[next_atom][1])
+            distances += atoms_list[i] - atoms_list[next_atom]
 
     return distances
 

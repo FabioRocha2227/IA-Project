@@ -217,7 +217,7 @@ def draw_player_position(level):
     color = "red"
     if level.is_atom_picked == True:
         color = "yellow"
-    pygame.draw.rect(screen, color, pygame.Rect(level.atoms_list[level.selected_atom][0] * SQUARE_SIZE + RIGTH_OFFSET, level.atoms_list[level.selected_atom][1] * SQUARE_SIZE + DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE), 3)
+    pygame.draw.rect(screen, color, pygame.Rect(level.atoms_list[level.selected_atom].x * SQUARE_SIZE + RIGTH_OFFSET, level.atoms_list[level.selected_atom].y * SQUARE_SIZE + DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE), 3)
 
 
 
@@ -225,7 +225,7 @@ def draw_atoms(level, movement):
     for i in range(0, len(level.atoms_list)):
         if i == level.selected_atom and not movement:
             draw_player_position(level)
-        screen.blit(level.sprites[i], (level.atoms_list[i][0] * SQUARE_SIZE+RIGTH_OFFSET, level.atoms_list[i][1] * SQUARE_SIZE+DOWN_OFFSET))
+        screen.blit(level.sprites[i], (level.atoms_list[i].x * SQUARE_SIZE+RIGTH_OFFSET, level.atoms_list[i].y * SQUARE_SIZE+DOWN_OFFSET))
 
 
 
@@ -324,7 +324,7 @@ def draw(level, movement=False):
 
 
 def draw_movement(level, new_state):
-    old_state_atom_x, old_state_atom_y = level.atoms_list[level.selected_atom][0], level.atoms_list[level.selected_atom][1]
+    old_state_atom_x, old_state_atom_y = level.atoms_list[level.selected_atom].x, level.atoms_list[level.selected_atom].y
     new_state_atom_x, new_state_atom_y = new_state[level.selected_atom][0], new_state[level.selected_atom][1]
     # Vertical direction
     while new_state_atom_y != old_state_atom_y:
@@ -333,7 +333,7 @@ def draw_movement(level, new_state):
         else:
             old_state_atom_y += 1
 
-        level.atoms_list[level.selected_atom][1] = old_state_atom_y
+        level.atoms_list[level.selected_atom].y = old_state_atom_y
 
         draw(level, movement=True)
      
@@ -344,6 +344,6 @@ def draw_movement(level, new_state):
         else:
             old_state_atom_x += 1
 
-        level.atoms_list[level.selected_atom][0] = old_state_atom_x
+        level.atoms_list[level.selected_atom].x = old_state_atom_x
 
         draw(level, movement=True)

@@ -1,5 +1,6 @@
 import pygame
 from level import Level
+from atom import Atom
 
 # Macros
 
@@ -65,7 +66,7 @@ matrix_level_1 =   [[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3],
                     [-3,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2]]
 
 molecule_level_1 = [[0,1,2]]
-atoms_list_level_1 = [[3,7], [8,6], [3,2]]
+atoms_list_level_1 = [Atom(0,3,7), Atom(1,8,6), Atom(2,3,2)]
 #molecule_level_1 = [[0,1,2,-1],[-1,-1,3,4]]
 #atoms_list_level_1 = [[1,2],[2,2],[3,2],[3,3],[4,3]]
 
@@ -88,7 +89,7 @@ molecule_atom_H_left = pygame.transform.scale(atom_H_left, (MOLECULE_SQUARE_SIZE
 
 sprites_level_1 = [atom_H_rigth, atom_O_left_rigth, atom_H_left]
 molecule_sprites_level_1 = [molecule_atom_H_rigth, molecule_atom_O_left_rigth, molecule_atom_H_left]
-
+""" 
 # Level 2
 
 matrix_level_2 =   [[-2,-2,-2,-2,-2,-3,-3,-3,-3,-3,-3,-3,-3,-3],
@@ -321,4 +322,7 @@ level_8 = Level(matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_le
 level_9 = Level(matrix_level_9, molecule_level_9, atoms_list_level_9, timeout_level_4, sprites_level_9, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 level_10 = Level(matrix_level_10, molecule_level_10, atoms_list_level_10, timeout_level_4, sprites_level_10, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 
-levels = [level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, level_10]
+levels = [level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, level_10] """
+
+level_1 = Level(matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_level_1, sprites_level_1, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
+levels = [level_1]
