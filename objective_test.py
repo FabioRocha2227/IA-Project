@@ -1,8 +1,3 @@
-import numpy as np
-import time
-from data_levels import atoms_list_level_1
-
-
 def objective_test(level_matrix, atoms_list, molecule):
     # Link molecule positions to state positions
     current_x = atoms_list[0][0] - molecule[0].index(0)

@@ -1,8 +1,3 @@
-from drawing import draw
-from data_levels import timeout_level_1
-
-
-
 def move_down(level_matrix, selected_atom, atoms_list):
   selected_atom_x, selected_atom_y = atoms_list[selected_atom][0], atoms_list[selected_atom][1]
   

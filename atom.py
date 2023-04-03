@@ -1,9 +1,8 @@
 
 class Atom():
     
-    def __init__(self, id, type, x, y):
+    def __init__(self, id, x, y):
         self.id = id
-        self.type = type
         self.x = x
         self.y = y
     

@@ -1,11 +1,11 @@
 import pygame
 import time
+import copy
 from drawing import draw, draw_movement, draw_menu_initial, draw_menu_player, draw_menu_levels
 from operators import move_right, move_up, move_down, move_left
 from objective_test import objective_test
 from utils_player import *
-from globals import timer_event
-from data_levels import levels
+from data import timer_event, levels
 
 
 def menu():
@@ -94,7 +94,9 @@ def menu():
         
     
 
-def play(level):
+def play(selected_level):
+    level = copy.copy(selected_level)
+    level.atoms_list = copy.deepcopy(selected_level.atoms_list)
     playing = True
 
     while playing == True:

@@ -1,11 +1,10 @@
 import pygame
-import numpy as np
-from globals import *
-from data_levels import *
+from data import *
+from data import screen, clock
 
 
 def draw_menu_initial(option):
-    screen.fill(menu_initial_background)
+    screen.fill("#E2C580")
     screen.blit(atomix_logo, (20, 20))
 
     color_1 = "#4A4A4A"
@@ -28,7 +27,7 @@ def draw_menu_initial(option):
 
     name_3 = font_menu_14.render("Tiago Marques", True, color_1, None)
     screen.blit(name_3, (20, 450))
-    up_3 = font_menu_10.render("2 0 1 7 0 4 7 3 3", True, color_2, None)
+    up_3 = font_menu_10.render("2 0 17 0 4 7 3 3", True, color_2, None)
     screen.blit(up_3, (168, 452))
 
     button_color = "#4E4B53"

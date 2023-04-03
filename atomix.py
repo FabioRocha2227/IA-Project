@@ -1,6 +1,6 @@
 import pygame
-from data_levels import levels
-from game import menu, play
+from data import levels
+from game import menu
 from algorithm_BFS import breadth_first_search
 from algorithm_IDFS import iterative_deepening_search
 from algorithm_greedy import greedy_best_first_search
@@ -10,7 +10,9 @@ import numpy as np
 from utils_algorithms import print_solution
 from evaluation_function import *
 
-level = levels[5]
+""" level = levels[5] """
+
+
 
 
 
@@ -40,8 +42,5 @@ print(objective_test(level.matrix, atoms_list, molecule_level_2)) """
 
 
 menu()
-
-#while menu() > 0:
-""" play(level) """
 
 pygame.quit()
