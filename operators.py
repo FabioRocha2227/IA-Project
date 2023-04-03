@@ -15,7 +15,7 @@ def move_down(level_matrix, selected_atom, atoms_list):
   while selected_atom_y < max_y - 1 and level_matrix[selected_atom_y + 1][selected_atom_x] == 0:      
     selected_atom_y += 1
 
-  new_state[selected_atom] = [selected_atom_x, selected_atom_y]
+  new_state[selected_atom].x, new_state[selected_atom].y = selected_atom_x, selected_atom_y
   
   return new_state
 
@@ -36,7 +36,7 @@ def move_up(level_matrix, selected_atom, atoms_list):
   while selected_atom_y > min_y + 1 and level_matrix[selected_atom_y - 1][selected_atom_x] == 0:      
     selected_atom_y -= 1
 
-  new_state[selected_atom] = [selected_atom_x, selected_atom_y]
+  new_state[selected_atom].x, new_state[selected_atom].y = selected_atom_x, selected_atom_y
   
   return new_state
 
@@ -57,7 +57,7 @@ def move_left(level_matrix, selected_atom, atoms_list):
   while selected_atom_x > min_x + 1 and level_matrix[selected_atom_y][selected_atom_x - 1] == 0:      
     selected_atom_x -= 1
 
-  new_state[selected_atom] = [selected_atom_x, selected_atom_y]
+  new_state[selected_atom].x, new_state[selected_atom].y = selected_atom_x, selected_atom_y
   
   return new_state
 
@@ -78,6 +78,6 @@ def move_right(level_matrix, selected_atom, atoms_list):
   while selected_atom_x < max_x - 1 and level_matrix[selected_atom_y][selected_atom_x + 1] == 0:      
     selected_atom_x += 1
 
-  new_state[selected_atom] = [selected_atom_x, selected_atom_y]
+  new_state[selected_atom].x, new_state[selected_atom].y = selected_atom_x, selected_atom_y
   
   return new_state

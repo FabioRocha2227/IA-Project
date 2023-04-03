@@ -1,10 +1,10 @@
 from collections import deque
 from operators import *
-import numpy as np
+import copy
 
 class TreeNode:
     def __init__(self, state, cost=0, heuristic=0, parent=None):
-        self.state = state.copy()
+        self.state = copy.deepcopy(state)
         self.cost = cost
         self.heuristic = heuristic
         self.parent = parent
@@ -47,4 +47,4 @@ def print_solution(node):
         print(i.state)
         #print(i.cost)
 
-    return
+    return solution

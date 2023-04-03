@@ -1,4 +1,5 @@
 import pygame
+import time
 from data import *
 from data import screen, clock
 
@@ -88,7 +89,7 @@ def draw_menu_player(menu_player, players):
     screen.blit(group, (529, 282))
     group = font_menu_22.render(players[4], True, button_text_color, None)
     screen.blit(group, (193, 382))
-    group = font_menu_22.render(players[5], True, button_color, None)
+    group = font_menu_22.render("BACK", True, button_color, None)
     screen.blit(group, (539, 382))
     
     selected_x = 100
@@ -325,7 +326,7 @@ def draw(level, movement=False):
 
 def draw_movement(level, new_state):
     old_state_atom_x, old_state_atom_y = level.atoms_list[level.selected_atom].x, level.atoms_list[level.selected_atom].y
-    new_state_atom_x, new_state_atom_y = new_state[level.selected_atom][0], new_state[level.selected_atom][1]
+    new_state_atom_x, new_state_atom_y = new_state[level.selected_atom].x, new_state[level.selected_atom].y
     # Vertical direction
     while new_state_atom_y != old_state_atom_y:
         if old_state_atom_y > new_state_atom_y:
@@ -347,3 +348,15 @@ def draw_movement(level, new_state):
         level.atoms_list[level.selected_atom].x = old_state_atom_x
 
         draw(level, movement=True)
+
+
+
+def draw_solution(level, solution):
+    for i in range(1, len(solution)):
+        for j in range(0, len(level.atoms_list)):
+            if level.atoms_list[j] != solution[i].state[j]:
+                level.selected_atom = j
+                break
+        draw_movement(level, solution[i].state)
+        #time.sleep(0.5)
+    

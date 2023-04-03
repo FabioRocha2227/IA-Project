@@ -6,14 +6,14 @@ def breadth_first_search(level):
     root = TreeNode(level.atoms_list)   # create the root node in the search tree
     queue = deque([root])   # initialize the queue to store the nodes
 
-    visited_states = [root.state]
+    visited_states = [root.state]    
     
     while queue:
         node = queue.popleft()   # get first element in the queue
+
         if objective_test(level.matrix, node.state, level.molecule):   # check goal state
             return node
-                
-        #print(visited_states)
+        
 
         for state in get_child_states(level.matrix, node.state):   # go through next states
             if state not in visited_states:

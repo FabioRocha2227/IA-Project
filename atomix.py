@@ -10,8 +10,7 @@ import numpy as np
 from utils_algorithms import print_solution
 from evaluation_function import *
 
-""" level = levels[5] """
-
+""" level = levels[1] """
 
 
 
@@ -27,7 +26,7 @@ print_solution(goal) """
 print(m) """
 
 """ goal = greedy_best_first_search(level)
-print_solution(goal)""" 
+print_solution(goal) """
 
 """ goal = a_star(level)
 print_solution(goal) """
