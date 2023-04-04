@@ -328,7 +328,7 @@ molecule_name_offset_x_level_5 = 90
 background_window_level_5 = "#798A98"
 background_matrix_level_5 = "#FFB562"
 
-sprites_level_5 = [atom_H_down, atom_H_diagonal_down_left, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_C_double_left_diagonal, atom_H_up, atom_H_diagonal_up_left, atom_H_diagonal_up_left]
+sprites_level_5 = [atom_H_down, atom_H_down, atom_H_diagonal_down_left, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_C_double_left_diagonal, atom_H_up, atom_H_diagonal_up_left]
 molecule_sprites_level_5 = [molecule_atom_H_down, molecule_atom_H_diagonal_down_left, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_right, molecule_atom_C_double_left_diagonal, molecule_atom_H_up, molecule_atom_H_diagonal_up_left]
 
 #Level 6
