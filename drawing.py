@@ -296,8 +296,8 @@ def draw_molecule(level):
     pygame.draw.rect(screen, "#363636", pygame.Rect(53, 303, 120, 25))
     text = font.render("- MOLECULE -", True, "#9D9D9D", None)
     screen.blit(text, (72, 310))
-    text = font_molecule_name.render("WATER", True, "#787878", None)
-    screen.blit(text, (95, 335))
+    text = font_molecule_name.render(molecules[level.id - 1], True, "#787878", None)
+    screen.blit(text, (level.molecule_name_offset_x, 335))
     for i in range(0, len(level.molecule)):
         for j in range(0, len(level.molecule[0])):
             if level.molecule[i][j] >= 0:

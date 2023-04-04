@@ -48,6 +48,11 @@ atoms_list = [[2,5], [1,6], [2,6], [3,6], [2,7]]
 print(objective_test(level.matrix, atoms_list, molecule_level_2)) """
 
 
-menu()
+#menu()
+
+from game import play
+level = levels[9]
+level.player = 0
+play(level)
 
 pygame.quit()

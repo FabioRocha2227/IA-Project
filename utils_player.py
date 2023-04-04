@@ -14,7 +14,7 @@ def select_atom_up(level):
         if abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_up[i]].x) < nearest_x:
             atoms_nearest_x = [atoms_up[i]]
             nearest_x = abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_up[i]].x)
-        elif abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_up[i]].x) < nearest_x:
+        elif abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_up[i]].x) == nearest_x:
             atoms_nearest_x.append(atoms_up[i])
 
     nearest_y = 0
@@ -41,7 +41,7 @@ def select_atom_down(level):
         if abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_down[i]].x) < nearest_x:
             atoms_nearest_x = [atoms_down[i]]
             nearest_x = abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_down[i]].x)
-        elif abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_down[i]].x) < nearest_x:
+        elif abs(level.atoms_list[level.selected_atom].x - level.atoms_list[atoms_down[i]].x) == nearest_x:
             atoms_nearest_x.append(atoms_down[i])
 
     nearest_y = len(level.matrix)
@@ -68,7 +68,7 @@ def select_atom_left(level):
         if abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_left[i]].y) < nearest_y:
             atoms_nearest_y = [atoms_left[i]]
             nearest_y = abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_left[i]].y)
-        elif abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_left[i]].y) < nearest_y:
+        elif abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_left[i]].y) == nearest_y:
             atoms_nearest_y.append(atoms_left[i])
 
     nearest_x = 0
@@ -95,7 +95,7 @@ def select_atom_right(level):
         if abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_right[i]].y) < nearest_y:
             atoms_nearest_y = [atoms_right[i]]
             nearest_y = abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_right[i]].y)
-        elif abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_right[i]].y) < nearest_y:
+        elif abs(level.atoms_list[level.selected_atom].y - level.atoms_list[atoms_right[i]].y) == nearest_y:
             atoms_nearest_y.append(atoms_right[i])
 
     nearest_x = len(level.matrix[0])

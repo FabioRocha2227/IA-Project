@@ -158,6 +158,10 @@ molecule_bottle_7 = pygame.transform.scale(bottle_7, (MOLECULE_SQUARE_SIZE, MOLE
 
 players = ["PLAYER 1", "GREEDY", "BFS", "A-STAR", "IDFS"]
 
+# Molecules
+
+molecules = ["WATER", "METHANE", "METHANOL", "ETHENE","PROPENE", "- BONUS -", "ETHANOL", "PROPANOL", "ETHANAL", "PROPANON"]
+
 # Levels
 
 # Level 1
@@ -178,9 +182,10 @@ atoms_list_level_1 = [Atom(0,3,7), Atom(1,8,6), Atom(2,3,2)]
 
 timeout_level_1 = 150
 
-matrix_offset_x_level_1 = 320
-matrix_offset_y_level_1 = 75
+matrix_offset_x_level_1 = 330
+matrix_offset_y_level_1 = 90
 molecule_offset_x_level_1 = 88
+molecule_name_offset_x_level_1 = 95
 
 background_window_level_1 = "#2F2D29"
 background_matrix_level_1 = "#FFB562"
@@ -209,12 +214,13 @@ atoms_list_level_2 = [Atom(0,9,4), Atom(1,2,5), Atom(2,5,4), Atom(3,8,8), Atom(4
 
 timeout_level_2 = 150
 
-matrix_offset_x_level_2 = 320
+matrix_offset_x_level_2 = 280
 matrix_offset_y_level_2 = 75
 molecule_offset_x_level_2 = 88
+molecule_name_offset_x_level_2 = 89
 
-background_window_level_2 = "#2F2D29"
-background_matrix_level_2 = "#FFB562"
+background_window_level_2 = "#0B3E31"
+background_matrix_level_2 = "#6ABF71"
 
 sprites_level_2 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_H_left, atom_H_up]
 molecule_sprites_level_2 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_H_left, molecule_atom_H_up]
@@ -243,12 +249,13 @@ atoms_list_level_3 = [Atom(0,2,3), Atom(1,2,8), Atom(2,9,7), Atom(3,6,8), Atom(4
 
 timeout_level_3 = 150
 
-matrix_offset_x_level_3 = 320
-matrix_offset_y_level_3 = 75
+matrix_offset_x_level_3 = 300
+matrix_offset_y_level_3 = 45
 molecule_offset_x_level_3 = 88
+molecule_name_offset_x_level_3 = 86
 
-background_window_level_3 = "#2F2D29"
-background_matrix_level_3 = "#FFB562"
+background_window_level_3 = "#1E1545"
+background_matrix_level_3 = "#505FBF"
 
 sprites_level_3 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_O_left_rigth, atom_H_left, atom_H_up]
 molecule_sprites_level_3 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_O_left_rigth, molecule_atom_H_left, molecule_atom_H_up]
@@ -278,12 +285,13 @@ atoms_list_level_4 = [Atom(0,5,9), Atom(1,7,7), Atom(2,5,7), Atom(3,2,7), Atom(4
 
 timeout_level_4 = 360
 
-matrix_offset_x_level_4 = 320
-matrix_offset_y_level_4 = 75
-molecule_offset_x_level_4 = 88
+matrix_offset_x_level_4 = 340
+matrix_offset_y_level_4 = 45
+molecule_offset_x_level_4 = 80
+molecule_name_offset_x_level_4 = 93
 
-background_window_level_4 = "#2F2D29"
-background_matrix_level_4 = "#FFB562"
+background_window_level_4 = "#222222"
+background_matrix_level_4 = "#A22626"
 
 sprites_level_4 = [atom_H_diagonal_down_right, atom_H_diagonal_down_left, atom_C_right_diagonal, atom_C_double_left_diagonal, atom_H_diagonal_up_right, atom_H_diagonal_up_left]
 molecule_sprites_level_4 = [molecule_atom_H_diagonal_down_right, molecule_atom_H_diagonal_down_left, molecule_atom_C_right_diagonal, molecule_atom_C_double_left_diagonal, molecule_atom_H_diagonal_up_right, molecule_atom_H_diagonal_up_left]
@@ -312,11 +320,12 @@ atoms_list_level_5 = [Atom(0,5,3), Atom(0,10,7), Atom(1,8,2), Atom(2,3,6), Atom(
 
 timeout_level_5 = 150
 
-matrix_offset_x_level_5 = 320
-matrix_offset_y_level_5 = 75
-molecule_offset_x_level_5 = 88
+matrix_offset_x_level_5 = 300
+matrix_offset_y_level_5 = 45
+molecule_offset_x_level_5 = 71
+molecule_name_offset_x_level_5 = 90
 
-background_window_level_5 = "#2F2D29"
+background_window_level_5 = "#798A98"
 background_matrix_level_5 = "#FFB562"
 
 sprites_level_5 = [atom_H_down, atom_H_diagonal_down_left, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_C_double_left_diagonal, atom_H_up, atom_H_diagonal_up_left, atom_H_diagonal_up_left]
@@ -339,12 +348,13 @@ atoms_list_level_6 = [Atom(0,1,3), Atom(1,4,1), Atom(2,3,4), Atom(3,2,1), Atom(4
 
 timeout_level_6 = 150
 
-matrix_offset_x_level_6 = 320
-matrix_offset_y_level_6 = 75
-molecule_offset_x_level_6 = 88
+matrix_offset_x_level_6 = 350
+matrix_offset_y_level_6 = 160
+molecule_offset_x_level_6 = 89
+molecule_name_offset_x_level_6 = 89
 
-background_window_level_6 = "#404B5B"
-background_matrix_level_6 = "#F0F7EE"
+background_window_level_6 = "#E2A94E"
+background_matrix_level_6 = "#222222"
 
 sprites_level_6 = [bottle_0, bottle_1, bottle_2, bottle_3, bottle_4, bottle_5, bottle_6, bottle_7]
 molecule_sprites_level_6 = [molecule_bottle_0, molecule_bottle_1, molecule_bottle_2, molecule_bottle_3, molecule_bottle_4, molecule_bottle_5, molecule_bottle_6, molecule_bottle_7]
@@ -374,11 +384,12 @@ atoms_list_level_7 = [Atom(0,3,1), Atom(0,9,9), Atom(1,2,9), Atom(2,6,3), Atom(2
 timeout_level_7 = 150
 
 matrix_offset_x_level_7 = 320
-matrix_offset_y_level_7 = 75
-molecule_offset_x_level_7 = 88
+matrix_offset_y_level_7 = 48
+molecule_offset_x_level_7 = 72
+molecule_name_offset_x_level_7 = 90
 
-background_window_level_7 = "#2F2D29"
-background_matrix_level_7 = "#FFB562"
+background_window_level_7 = "#0B3E31"
+background_matrix_level_7 = "#6ABF71"
 
 sprites_level_7 = [ atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_cross, atom_O_left_rigth, atom_H_left, atom_H_up, atom_H_up]
 molecule_sprites_level_7 = [ molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_O_left_rigth, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_H_up, molecule_atom_H_up]
@@ -408,12 +419,13 @@ atoms_list_level_8 = [Atom(0,8,1), Atom(0,2,4), Atom(0,9,7), Atom(1,3,10), Atom(
 
 timeout_level_8 = 150
 
-matrix_offset_x_level_8 = 320
-matrix_offset_y_level_8 = 75
-molecule_offset_x_level_8 = 88
+matrix_offset_x_level_8 = 330
+matrix_offset_y_level_8 = 47
+molecule_offset_x_level_8 = 71
+molecule_name_offset_x_level_8 = 86
 
-background_window_level_8 = "#2F2D29"
-background_matrix_level_8 = "#FFB562"
+background_window_level_8 = "#1E1545"
+background_matrix_level_8 = "#505FBF"
 
 sprites_level_8 = [atom_H_down, atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross,  atom_C_cross, atom_C_cross, atom_H_left, atom_H_up, atom_O_up_down, atom_H_up, atom_H_up]
 molecule_sprites_level_8 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_O_up_down, molecule_atom_H_up]
@@ -440,12 +452,13 @@ atoms_list_level_9 = [Atom(0,8,5), Atom(0,6,3), Atom(1,2,5), Atom(2,6,4), Atom(3
 
 timeout_level_9 = 150
 
-matrix_offset_x_level_9 = 320
+matrix_offset_x_level_9 = 345
 matrix_offset_y_level_9 = 75
-molecule_offset_x_level_9 = 88
+molecule_offset_x_level_9 = 80
+molecule_name_offset_x_level_9 = 90
 
-background_window_level_9 = "#2F2D29"
-background_matrix_level_9 = "#FFB562"
+background_window_level_9 = "#222222"
+background_matrix_level_9 = "#A22626"
 
 sprites_level_9 = [atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_O_double_left, atom_H_up]
 molecule_sprites_level_9 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_right, molecule_atom_O_double_left, molecule_atom_H_up]
@@ -473,27 +486,28 @@ atoms_list_level_10 = [Atom(0,7,3), Atom(0,9,5), Atom(1,4,9), Atom(2,6,7), Atom(
 
 timeout_level_10 = 150
 
-matrix_offset_x_level_10 = 320
-matrix_offset_y_level_10 = 75
-molecule_offset_x_level_10 = 88
+matrix_offset_x_level_10 = 315
+matrix_offset_y_level_10 = 63
+molecule_offset_x_level_10 = 72
+molecule_name_offset_x_level_10 = 86
 
-background_window_level_10 = "#2F2D29"
+background_window_level_10 = "#798A98"
 background_matrix_level_10 = "#FFB562"
 
 sprites_level_10 = [atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_double_down, atom_C_cross, atom_H_left, atom_H_up, atom_O_double_up, atom_H_up]
 molecule_sprites_level_10 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_down, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_O_double_up]
 
 # Levels list
-level_1 = Level(1, matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_level_1, sprites_level_1, molecule_sprites_level_1, matrix_offset_x_level_1, matrix_offset_y_level_1, molecule_offset_x_level_1, background_window_level_1, background_matrix_level_1)
-level_2 = Level(2, matrix_level_2, molecule_level_2, atoms_list_level_2, timeout_level_2, sprites_level_2, molecule_sprites_level_2, matrix_offset_x_level_2, matrix_offset_y_level_2, molecule_offset_x_level_2, background_window_level_2, background_matrix_level_2)
-level_3 = Level(3, matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_3, sprites_level_3, molecule_sprites_level_3, matrix_offset_x_level_3, matrix_offset_y_level_3, molecule_offset_x_level_3, background_window_level_3, background_matrix_level_3)
-level_4 = Level(4, matrix_level_4, molecule_level_4, atoms_list_level_4, timeout_level_4, sprites_level_4, molecule_sprites_level_4, matrix_offset_x_level_4, matrix_offset_y_level_4, molecule_offset_x_level_4, background_window_level_4, background_matrix_level_4)
-level_5 = Level(5, matrix_level_5, molecule_level_5, atoms_list_level_5, timeout_level_5, sprites_level_5, molecule_sprites_level_5, matrix_offset_x_level_5, matrix_offset_y_level_5, molecule_offset_x_level_5, background_window_level_5, background_matrix_level_5)
-level_6 = Level(6, matrix_level_6, molecule_level_6, atoms_list_level_6, timeout_level_6, sprites_level_6, molecule_sprites_level_6, matrix_offset_x_level_6, matrix_offset_y_level_6, molecule_offset_x_level_6, background_window_level_6, background_matrix_level_6)
-level_7 = Level(7, matrix_level_7, molecule_level_7, atoms_list_level_7, timeout_level_7, sprites_level_7, molecule_sprites_level_7, matrix_offset_x_level_7, matrix_offset_y_level_7, molecule_offset_x_level_7, background_window_level_7, background_matrix_level_7)
-level_8 = Level(8, matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_level_8, sprites_level_8, molecule_sprites_level_8, matrix_offset_x_level_8, matrix_offset_y_level_8, molecule_offset_x_level_8, background_window_level_8, background_matrix_level_8)
-level_9 = Level(9, matrix_level_9, molecule_level_9, atoms_list_level_9, timeout_level_9, sprites_level_9, molecule_sprites_level_9, matrix_offset_x_level_9, matrix_offset_y_level_9, molecule_offset_x_level_9, background_window_level_1, background_matrix_level_9)
-level_10 = Level(10, matrix_level_10, molecule_level_10, atoms_list_level_10, timeout_level_10, sprites_level_10, molecule_sprites_level_10, matrix_offset_x_level_10, matrix_offset_y_level_10, molecule_offset_x_level_10, background_window_level_10, background_matrix_level_10)
+level_1 = Level(1, matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_level_1, sprites_level_1, molecule_sprites_level_1, matrix_offset_x_level_1, matrix_offset_y_level_1, molecule_offset_x_level_1, molecule_name_offset_x_level_1, background_window_level_1, background_matrix_level_1)
+level_2 = Level(2, matrix_level_2, molecule_level_2, atoms_list_level_2, timeout_level_2, sprites_level_2, molecule_sprites_level_2, matrix_offset_x_level_2, matrix_offset_y_level_2, molecule_offset_x_level_2, molecule_name_offset_x_level_2, background_window_level_2, background_matrix_level_2)
+level_3 = Level(3, matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_3, sprites_level_3, molecule_sprites_level_3, matrix_offset_x_level_3, matrix_offset_y_level_3, molecule_offset_x_level_3, molecule_name_offset_x_level_3, background_window_level_3, background_matrix_level_3)
+level_4 = Level(4, matrix_level_4, molecule_level_4, atoms_list_level_4, timeout_level_4, sprites_level_4, molecule_sprites_level_4, matrix_offset_x_level_4, matrix_offset_y_level_4, molecule_offset_x_level_4, molecule_name_offset_x_level_4, background_window_level_4, background_matrix_level_4)
+level_5 = Level(5, matrix_level_5, molecule_level_5, atoms_list_level_5, timeout_level_5, sprites_level_5, molecule_sprites_level_5, matrix_offset_x_level_5, matrix_offset_y_level_5, molecule_offset_x_level_5, molecule_name_offset_x_level_5, background_window_level_5, background_matrix_level_5)
+level_6 = Level(6, matrix_level_6, molecule_level_6, atoms_list_level_6, timeout_level_6, sprites_level_6, molecule_sprites_level_6, matrix_offset_x_level_6, matrix_offset_y_level_6, molecule_offset_x_level_6, molecule_name_offset_x_level_6, background_window_level_6, background_matrix_level_6)
+level_7 = Level(7, matrix_level_7, molecule_level_7, atoms_list_level_7, timeout_level_7, sprites_level_7, molecule_sprites_level_7, matrix_offset_x_level_7, matrix_offset_y_level_7, molecule_offset_x_level_7, molecule_name_offset_x_level_7, background_window_level_7, background_matrix_level_7)
+level_8 = Level(8, matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_level_8, sprites_level_8, molecule_sprites_level_8, matrix_offset_x_level_8, matrix_offset_y_level_8, molecule_offset_x_level_8, molecule_name_offset_x_level_8, background_window_level_8, background_matrix_level_8)
+level_9 = Level(9, matrix_level_9, molecule_level_9, atoms_list_level_9, timeout_level_9, sprites_level_9, molecule_sprites_level_9, matrix_offset_x_level_9, matrix_offset_y_level_9, molecule_offset_x_level_9, molecule_name_offset_x_level_9, background_window_level_9, background_matrix_level_9)
+level_10 = Level(10, matrix_level_10, molecule_level_10, atoms_list_level_10, timeout_level_10, sprites_level_10, molecule_sprites_level_10, matrix_offset_x_level_10, matrix_offset_y_level_10, molecule_offset_x_level_10, molecule_name_offset_x_level_10, background_window_level_10, background_matrix_level_10)
 
 levels = [level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, level_10] 
 

@@ -1,7 +1,7 @@
 
 class Level():
     
-    def __init__(self, id, matrix, molecule, atoms_list, timeout, sprites, molecule_sprites, matrix_offset_x, matrix_offset_y, molecule_offset_x, background_window, background_matrix):
+    def __init__(self, id, matrix, molecule, atoms_list, timeout, sprites, molecule_sprites, matrix_offset_x, matrix_offset_y, molecule_offset_x, molecule_name_offset_x, background_window, background_matrix):
         self.id = id
         self.matrix = matrix
         self.molecule = molecule
@@ -12,6 +12,7 @@ class Level():
         self.matrix_offset_x = matrix_offset_x
         self.matrix_offset_y = matrix_offset_y
         self.molecule_offset_x = molecule_offset_x
+        self.molecule_name_offset_x = molecule_name_offset_x
         self.background_window = background_window
         self.background_matrix = background_matrix
         
