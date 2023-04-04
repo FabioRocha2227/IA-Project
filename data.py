@@ -62,6 +62,18 @@ atom_H_left = pygame.image.load("assets/sprites/H_left.png")
 atom_H_left = pygame.transform.scale(atom_H_left, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_H_left = pygame.transform.scale(atom_H_left, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
+atom_H_up = pygame.image.load("assets/sprites/H_up.png")
+atom_H_up = pygame.transform.scale(atom_H_up, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_up = pygame.transform.scale(atom_H_up, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_H_down = pygame.image.load("assets/sprites/H_down.png")
+atom_H_down = pygame.transform.scale(atom_H_down, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_down = pygame.transform.scale(atom_H_down, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_C_cross = pygame.image.load("assets/sprites/C_cross.png")
+atom_C_cross = pygame.transform.scale(atom_C_cross, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_C_cross = pygame.transform.scale(atom_C_cross, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
 # Players
 
 players = ["PLAYER 1", "GREEDY", "BFS", "A-STAR", "IDFS"]
@@ -113,11 +125,8 @@ molecule_level_2 = [[-1, 0,-1],
                     [-1, 4,-1]]
 atoms_list_level_2 = [Atom(0,9,4), Atom(1,2,5), Atom(2,5,4), Atom(3,8,8), Atom(4,3,9)]
 
-atom_H_up = pygame.transform.rotate(atom_H_rigth, 90)
-atom_H_down = pygame.transform.rotate(atom_H_left, 90)
-
-sprites_level_2 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
-molecule_sprites_level_2 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
+sprites_level_2 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_H_left, atom_H_up]
+molecule_sprites_level_2 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_H_left, atom_H_up]
 
 #Level 3
 
