@@ -21,8 +21,8 @@ def select_atom_up(level):
 
     for i in range(len(atoms_nearest_x)):
         if level.atoms_list[atoms_nearest_x[i]].y > nearest_y:
-                nearest_y = level.atoms_list[atoms_nearest_x[i]].y
-                level.selected_atom = atoms_nearest_x[i]
+            nearest_y = level.atoms_list[atoms_nearest_x[i]].y
+            level.selected_atom = atoms_nearest_x[i]
 
 
 
@@ -48,8 +48,8 @@ def select_atom_down(level):
 
     for i in range(len(atoms_nearest_x)):
         if level.atoms_list[atoms_nearest_x[i]].y < nearest_y:
-                nearest_y = level.atoms_list[atoms_nearest_x[i]].y
-                level.selected_atom = atoms_nearest_x[i]
+            nearest_y = level.atoms_list[atoms_nearest_x[i]].y
+            level.selected_atom = atoms_nearest_x[i]
 
 
 
@@ -75,8 +75,8 @@ def select_atom_left(level):
 
     for i in range(len(atoms_nearest_y)):
         if level.atoms_list[atoms_nearest_y[i]].x > nearest_x:
-                nearest_x = level.atoms_list[atoms_nearest_y[i]].x
-                level.selected_atom = atoms_nearest_y[i]
+            nearest_x = level.atoms_list[atoms_nearest_y[i]].x
+            level.selected_atom = atoms_nearest_y[i]
 
 
 
@@ -102,5 +102,5 @@ def select_atom_right(level):
 
     for i in range(len(atoms_nearest_y)):
         if level.atoms_list[atoms_nearest_y[i]].x < nearest_x:
-                nearest_x = level.atoms_list[atoms_nearest_y[i]].x
-                level.selected_atom = atoms_nearest_y[i]
+            nearest_x = level.atoms_list[atoms_nearest_y[i]].x
+            level.selected_atom = atoms_nearest_y[i]

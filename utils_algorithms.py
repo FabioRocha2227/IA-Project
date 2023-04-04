@@ -36,15 +36,26 @@ def get_child_states(level_matrix, state):
 
 
 
-def print_solution(node):
+def get_solution(node):
     solution = deque([node])
     
     while node.depth != 0:
         solution.appendleft(node.parent)
         node = node.parent
 
-    for i in solution:
-        print(i.state)
-        #print(i.cost)
-
     return solution
+
+
+
+def print_solution(solution):
+    for i in solution:
+        print('[', end = "")
+        for atom in i.state:
+            print("  Atom" , end = ' ')
+            print(str(atom.id), end = "")
+            print(":", end = ' ')
+            print(str(atom.x), end = "")
+            print(",", end = ' ')
+            print(str(atom.y), end = ' ')
+
+        print(" ]")

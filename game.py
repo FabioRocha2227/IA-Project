@@ -10,7 +10,7 @@ from algorithm_BFS import breadth_first_search
 from algorithm_IDFS import iterative_deepening_search
 from algorithm_greedy import greedy_best_first_search
 from algorithm_A_star import a_star
-from utils_algorithms import print_solution
+from utils_algorithms import get_solution, print_solution
 
 
 def menu():
@@ -85,7 +85,7 @@ def menu():
                         else:
                             level = copy.copy(levels[menu_level])
                             level.atoms_list = copy.deepcopy(levels[menu_level].atoms_list)
-                            level.set_player(menu_player)
+                            level.player = menu_player
                             play(level)                     
                                  
         if sub_menu == 0:
@@ -153,33 +153,58 @@ def play(level):
                         playing = False
 
             draw(level)
-        # Algorithms  -  1.GREEDY   2.BFS   3.A-STAR   4.IDFS
+        # Algorithms
         else:
+            # GREEDY
             if level.player == 1:
                 draw(level)
+                time_start = time.time()
                 goal = greedy_best_first_search(level)
-                solution = print_solution(goal)
+                time_end = time.time()
+                level.algorithm_time = time_end - time_start
+                solution = get_solution(goal)
+                level.algorithm_moves = len(solution) - 1
+                print_solution(solution)
                 draw_solution(level, solution)
                 time.sleep(1.5)
                 playing = False
+            # BFS
             elif level.player == 2:
                 draw(level)
+                time_start = time.time()
                 goal = breadth_first_search(level)
-                solution = print_solution(goal)
+                time_end = time.time()
+                level.algorithm_time = time_end - time_start
+                print(level.algorithm_time)
+                solution = get_solution(goal)
+                level.algorithm_moves = len(solution) - 1
+                print_solution(solution)
                 draw_solution(level, solution)
                 time.sleep(1.5)
                 playing = False
+            # A-STAR    
             elif level.player == 3:
                 draw(level)
+                time_start = time.time()
                 goal = a_star(level)
-                solution = print_solution(goal)
+                time_end = time.time()
+                level.algorithm_time = time_end - time_start
+                solution = get_solution(goal)
+                level.algorithm_moves = len(solution) - 1
+                print_solution(solution)
                 draw_solution(level, solution)
                 time.sleep(1.5)
                 playing = False
+            # IDFS
             elif level.player == 4:
                 draw(level)
+                time_start = time.time()
                 goal = iterative_deepening_search(level, 10)
-                solution = print_solution(goal)
+                time_end = time.time()
+                level.algorithm_time = time_end - time_start
+                solution = get_solution(goal)
+                level.algorithm_moves = len(solution) - 1
+                print_solution(solution)
                 draw_solution(level, solution)
                 time.sleep(1.5)
                 playing = False

@@ -218,7 +218,7 @@ def draw_player_position(level):
     color = "red"
     if level.is_atom_picked == True:
         color = "yellow"
-    pygame.draw.rect(screen, color, pygame.Rect(level.atoms_list[level.selected_atom].x * SQUARE_SIZE + RIGTH_OFFSET, level.atoms_list[level.selected_atom].y * SQUARE_SIZE + DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE), 3)
+    pygame.draw.rect(screen, color, pygame.Rect(level.atoms_list[level.selected_atom].x * SQUARE_SIZE + level.matrix_offset_x, level.atoms_list[level.selected_atom].y * SQUARE_SIZE + level.matrix_offset_y, SQUARE_SIZE, SQUARE_SIZE), 3)
 
 
 
@@ -226,52 +226,67 @@ def draw_atoms(level, movement):
     for i in range(0, len(level.atoms_list)):
         if i == level.selected_atom and not movement:
             draw_player_position(level)
-        screen.blit(level.sprites[i], (level.atoms_list[i].x * SQUARE_SIZE+RIGTH_OFFSET, level.atoms_list[i].y * SQUARE_SIZE+DOWN_OFFSET))
+        screen.blit(level.sprites[i], (level.atoms_list[i].x * SQUARE_SIZE + level.matrix_offset_x, level.atoms_list[i].y * SQUARE_SIZE + level.matrix_offset_y))
 
 
 
-def draw_text():
-    for i in range(0, 2):
-        # Info about the player and the scores
-        text = font.render(game_text_score[i], True, TEXT_COLOR, None)
-        screen.blit(text, (50, (i * 50 + 20)))
+def draw_level_text(level):
+    # Player
+    text = font_menu_30.render(players[level.player], True, TEXT_COLOR, None)
+    screen.blit(text, (50, 50))
 
-        # Info about the level and its timeout
-        text = font.render(game_text_level[i], True, TEXT_COLOR, None)
-        screen.blit(text, (50, ((i + 1) * 70 + 80)))
+    level_y, current_level_y = 170, 190
 
-    # Current level
-    text = font_level_timeout.render("1", True, TEXT_COLOR, None)
-    screen.blit(text, (50, 170))
+    time = level.timeout
 
-
-
-def draw_scores():
-    level_score, highscore = 0, 0
-    text = font.render(str(level_score), True, TEXT_COLOR, None)
-    screen.blit(text, (50, 35))
-    text = font.render(str(highscore), True, TEXT_COLOR, None)
-    screen.blit(text, (50, 85))
-
-
-
-def draw_timeout(level_timeout):
-    minutes = level_timeout // 60
-    seconds = level_timeout - minutes * 60
-    timeout = str(minutes) + ":"
-    if seconds == 0:
-        timeout += "00"
-    elif seconds > 0 and seconds < 10:
-        timeout += "0" + str(seconds)
-    else:
-        timeout += str(seconds)
-
-    color = TEXT_COLOR
-    if level_timeout <= 10:
+    if time <= 10:
         color = TEXT_ALERT_COLOR
 
-    text = font_level_timeout.render(timeout, True, color, None)
+    time = get_time_string(level.timeout)
+    
+    color = TEXT_COLOR
+
+    # Moves
+    if level.player > 0:
+        text = font.render("MOVES", True, TEXT_COLOR, None)
+        screen.blit(text, (50, 170))
+
+        # Number of moves
+        text = font_menu_30.render(str(level.algorithm_moves), True, TEXT_COLOR, None)
+        screen.blit(text, (50, 190))
+
+        level_y, current_level_y = 100, 120
+
+        time = get_time_string(level.algorithm_time)
+
+    # Level
+    text = font.render("LEVEL", True, TEXT_COLOR, None)
+    screen.blit(text, (50, level_y))
+
+    # Current level
+    text = font_menu_30.render(str(level.id), True, TEXT_COLOR, None)
+    screen.blit(text, (50, current_level_y))
+
+    # Time
+    text = font.render("TIME", True, TEXT_COLOR, None)
     screen.blit(text, (50, 240))
+
+    # Time number
+    text = font_menu_30.render(time, True, color, None)
+    screen.blit(text, (50, 260))
+
+
+
+def get_time_string(time):
+    minutes = round(time // 60)
+    seconds = time - minutes * 60
+    time = str(minutes) + " : "
+    if seconds >= 0 and seconds < 10:
+        time += "0" + str(round(seconds, 4))
+    else:
+        time += str(round(seconds, 4))
+
+    return time
 
 
 
@@ -286,7 +301,7 @@ def draw_molecule(level):
     for i in range(0, len(level.molecule)):
         for j in range(0, len(level.molecule[0])):
             if level.molecule[i][j] >= 0:
-                screen.blit(level.molecule_sprites[level.molecule[i][j]], (88 + j * MOLECULE_SQUARE_SIZE, 355 + i * MOLECULE_SQUARE_SIZE))
+                screen.blit(level.molecule_sprites[level.molecule[i][j]], (level.molecule_offset_x + j * MOLECULE_SQUARE_SIZE, 355 + i * MOLECULE_SQUARE_SIZE))
 
 
 
@@ -308,17 +323,15 @@ def draw(level, movement=False):
     for i in range(0, len(level.matrix[0])):
         for j in range(0, len(level.matrix)):
             if level.matrix[j][i] == -2:
-                screen.blit(wall_extern, (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
+                screen.blit(wall_extern, (i * SQUARE_SIZE + level.matrix_offset_x, j * SQUARE_SIZE + level.matrix_offset_y))
                 #pygame.draw.rect(screen, "gray", pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
             elif level.matrix[j][i] == -1:
-                screen.blit(wall_intern, (i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET))
+                screen.blit(wall_intern, (i * SQUARE_SIZE + level.matrix_offset_x, j * SQUARE_SIZE + level.matrix_offset_y))
             elif level.matrix[j][i] >= 0:
-                pygame.draw.rect(screen, level.background_matrix, pygame.Rect(i*SQUARE_SIZE+RIGTH_OFFSET, j*SQUARE_SIZE+DOWN_OFFSET, SQUARE_SIZE, SQUARE_SIZE))
+                pygame.draw.rect(screen, level.background_matrix, pygame.Rect(i * SQUARE_SIZE + level.matrix_offset_x, j * SQUARE_SIZE + level.matrix_offset_y, SQUARE_SIZE, SQUARE_SIZE))
 
     draw_atoms(level, movement)
-    draw_text()
-    draw_scores()
-    draw_timeout(level.timeout)
+    draw_level_text(level)
     draw_molecule(level)
 
     refresh()
