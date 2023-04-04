@@ -9,8 +9,6 @@ def objective_test(level_matrix, atoms_list, molecule):
         # Link molecule positions to state positions
         current_x = atoms_list[atom_index].x - molecule[0].index(0)
         current_y = atoms_list[atom_index].y
-        
-        nr_correct_atoms = 0
 
         for y in range(0, len(molecule)):
             for x in range(0, len(molecule[y])):
@@ -20,20 +18,10 @@ def objective_test(level_matrix, atoms_list, molecule):
                         break
 
                     # Verify if the atom is in its correct position in the molecule
-                    """ i = 0
-                    while(i < len(temp_atoms_list)):
-                        print(i)
-                        print(temp_atoms_list)
-                        if temp_atoms_list[i].id == molecule[y][x]:
-                            if temp_atoms_list[i].x == x + current_x and temp_atoms_list[i].y == y + current_y:
-                                del temp_atoms_list[i]
-                        i += 1 """
                     for atom in temp_atoms_list:
                         if atom.id == molecule[y][x]:
                             if atom.x == x + current_x and atom.y == y + current_y:
                                 temp_atoms_list.remove(atom)
-                        """ else:
-                            break """
             else:
                 continue
             break
