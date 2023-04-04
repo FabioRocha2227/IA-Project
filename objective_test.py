@@ -13,18 +13,11 @@ def objective_test(level_matrix, atoms_list, molecule):
         for y in range(0, len(molecule)):
             for x in range(0, len(molecule[y])):
                 if molecule[y][x] >= 0:
-                    # Prevent out of range indexes
-                    if (len(level_matrix[0]) <= (x + current_x)) or (len(level_matrix) <= (y + current_y)):
-                        break
-
                     # Verify if the atom is in its correct position in the molecule
                     for atom in temp_atoms_list:
                         if atom.id == molecule[y][x]:
                             if atom.x == x + current_x and atom.y == y + current_y:
                                 temp_atoms_list.remove(atom)
-            else:
-                continue
-            break
                         
         if len(temp_atoms_list) == 0:
             return True

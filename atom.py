@@ -1,4 +1,3 @@
-
 class Atom():
     
     def __init__(self, id, x, y):

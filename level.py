@@ -1,4 +1,3 @@
-
 class Level():
     
     def __init__(self, id, matrix, molecule, atoms_list, timeout, sprites, molecule_sprites, matrix_offset_x, matrix_offset_y, molecule_offset_x, molecule_name_offset_x, background_window, background_matrix):

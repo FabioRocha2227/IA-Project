@@ -3,8 +3,6 @@ from evaluation_function import evaluate_distances, evaluate_links_and_distances
 from objective_test import objective_test
 from queue import PriorityQueue
 
-#heuristic=evaluate_distances(level.atoms_list)
-
 def a_star(level):
     frontier = PriorityQueue()
     root = TreeNode(level.atoms_list, cost=0, heuristic=evaluate_links_and_distances(level.matrix, level.atoms_list, level.molecule))

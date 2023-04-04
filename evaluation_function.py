@@ -1,4 +1,3 @@
-
 def evaluate_distances(atoms_list):
     distances = 0
     next_atom = 0
@@ -11,6 +10,8 @@ def evaluate_distances(atoms_list):
             distances += atoms_list[i] - atoms_list[next_atom]
 
     return distances
+
+
 
 def evaluate_missing_links(level_matrix, atoms_list, molecule):
     # Link molecule positions to state positions
@@ -33,6 +34,8 @@ def evaluate_missing_links(level_matrix, atoms_list, molecule):
                     current_y = atoms_list[molecule[y][x]].y - y
 
     return nr_missing_links
+
+
 
 def evaluate_links_and_distances(level_matrix, atoms_list, molecule):
     return evaluate_missing_links(level_matrix, atoms_list, molecule) * evaluate_distances(atoms_list)

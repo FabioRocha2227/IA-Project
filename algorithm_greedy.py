@@ -23,7 +23,3 @@ def greedy_best_first_search(level):
                 queue.put((evaluate_links_and_distances(level.matrix, child.state, level.molecule), child))
 
     return None
-
-
-'''Score = Nr of atoms not linked * Sum of all distances between atoms'''
-

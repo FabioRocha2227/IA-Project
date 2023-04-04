@@ -1,5 +1,4 @@
 import pygame
-import time
 from data import *
 from data import screen, clock
 
