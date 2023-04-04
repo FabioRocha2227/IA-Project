@@ -9,11 +9,19 @@ from objective_test import *
 import numpy as np
 from utils_algorithms import print_solution
 from evaluation_function import *
+from atom import *
+""" 
+level = levels[7]
 
-""" level = levels[1] """
+molecule_level_8 = [[-1, 0, 0, 0,-1],
+                    [ 1, 2, 2, 2, 3],
+                    [-1, 4, 5, 4,-1],
+                    [-1,-1, 4,-1,-1]]
 
+atoms_list = [Atom(0,3,3), Atom(0,4,3), Atom(0,5,3), Atom(1,2,4), Atom(2,4,4), Atom(2,3,4), Atom(2,5,4), Atom(3,7,4), Atom(4,4,6), Atom(4,5,5), Atom(4,3,5), Atom(5,4,5)]
 
-
+print(objective_test(level.matrix, atoms_list, level.molecule))
+ """
 
 """ goal = iterative_deepening_search(level, 10)
 print_solution(goal) """

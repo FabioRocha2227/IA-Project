@@ -197,7 +197,8 @@ molecule_level_5 = [[-1, 0, 0,-1, 1],
 
 atoms_list_level_5 = [Atom(0,5,3), Atom(0,10,7), Atom(1,8,2), Atom(2,3,6), Atom(3,8,6), Atom(4,3,4), Atom(5,11,5), Atom(6,9, 11), Atom(7,1,11)]
 
-sprites_level_5 = [atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up, atom_H_leftup]
+sprites_level_5 = [atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up, atom_H_leftup, atom_H_leftup]
+molecule_sprites_level_5 = [atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up, atom_H_leftup]
 
 #Level 6
 
@@ -318,7 +319,7 @@ level_1 = Level(matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_le
 level_2 = Level(matrix_level_2, molecule_level_2, atoms_list_level_2, timeout_level_1, sprites_level_2, molecule_sprites_level_2, background_window_level_1, background_matrix_level_1)
 level_3 = Level(matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_1, sprites_level_3, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 level_4 = Level(matrix_level_4, molecule_level_4, atoms_list_level_4, timeout_level_4, sprites_level_4, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_5 = Level(matrix_level_5, molecule_level_5, atoms_list_level_5, timeout_level_4, sprites_level_5, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
+level_5 = Level(matrix_level_5, molecule_level_5, atoms_list_level_5, timeout_level_4, sprites_level_5, molecule_sprites_level_5, background_window_level_1, background_matrix_level_1)
 level_6 = Level(matrix_level_6, molecule_level_6, atoms_list_level_6, timeout_level_1, sprites_level_6, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 level_7 = Level(matrix_level_7, molecule_level_7, atoms_list_level_7, timeout_level_4, sprites_level_7, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 level_8 = Level(matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_level_4, sprites_level_8, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)

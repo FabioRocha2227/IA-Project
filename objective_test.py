@@ -1,7 +1,11 @@
+import copy
+
 def objective_test(level_matrix, atoms_list, molecule):
     atom_index = 0
 
     while atoms_list[atom_index].id == 0:
+        temp_atoms_list = copy.deepcopy(atoms_list)
+
         # Link molecule positions to state positions
         current_x = atoms_list[atom_index].x - molecule[0].index(0)
         current_y = atoms_list[atom_index].y
@@ -14,14 +18,27 @@ def objective_test(level_matrix, atoms_list, molecule):
                     # Prevent out of range indexes
                     if (len(level_matrix[0]) <= (x + current_x)) or (len(level_matrix) <= (y + current_y)):
                         break
+
                     # Verify if the atom is in its correct position in the molecule
-                    if atoms_list[molecule[y][x]].x == x + current_x and atoms_list[molecule[y][x]].y == y + current_y:
-                        nr_correct_atoms += 1
+                    """ i = 0
+                    while(i < len(temp_atoms_list)):
+                        print(i)
+                        print(temp_atoms_list)
+                        if temp_atoms_list[i].id == molecule[y][x]:
+                            if temp_atoms_list[i].x == x + current_x and temp_atoms_list[i].y == y + current_y:
+                                del temp_atoms_list[i]
+                        i += 1 """
+                    for atom in temp_atoms_list:
+                        if atom.id == molecule[y][x]:
+                            if atom.x == x + current_x and atom.y == y + current_y:
+                                temp_atoms_list.remove(atom)
+                        """ else:
+                            break """
             else:
                 continue
             break
                         
-        if nr_correct_atoms == len(atoms_list):
+        if len(temp_atoms_list) == 0:
             return True
         
         atom_index += 1
