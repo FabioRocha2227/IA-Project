@@ -50,13 +50,11 @@ wall_extern = pygame.transform.scale(wall_extern, (SQUARE_SIZE, SQUARE_SIZE))
 wall_intern = pygame.image.load("assets/sprites/wall_intern.png")
 wall_intern = pygame.transform.scale(wall_intern, (SQUARE_SIZE, SQUARE_SIZE))
 
+# Hidrogen 
+
 atom_H_rigth = pygame.image.load("assets/sprites/H_right.png")
 atom_H_rigth = pygame.transform.scale(atom_H_rigth, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_H_rigth = pygame.transform.scale(atom_H_rigth, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
-
-atom_O_left_rigth = pygame.image.load("assets/sprites/O_left_right.png")
-atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (SQUARE_SIZE, SQUARE_SIZE))
-molecule_atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
 atom_H_left = pygame.image.load("assets/sprites/H_left.png")
 atom_H_left = pygame.transform.scale(atom_H_left, (SQUARE_SIZE, SQUARE_SIZE))
@@ -70,9 +68,95 @@ atom_H_down = pygame.image.load("assets/sprites/H_down.png")
 atom_H_down = pygame.transform.scale(atom_H_down, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_H_down = pygame.transform.scale(atom_H_down, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
+atom_H_diagonal_down_left = pygame.image.load("assets/sprites/H_diagonal_down_left.png")
+atom_H_diagonal_down_left = pygame.transform.scale(atom_H_diagonal_down_left, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_diagonal_down_left = pygame.transform.scale(atom_H_diagonal_down_left, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_H_diagonal_up_left = pygame.image.load("assets/sprites/H_diagonal_up_left.png")
+atom_H_diagonal_up_left = pygame.transform.scale(atom_H_diagonal_up_left, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_diagonal_up_left = pygame.transform.scale(atom_H_diagonal_up_left, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_H_diagonal_down_right = pygame.image.load("assets/sprites/H_diagonal_down_right.png")
+atom_H_diagonal_down_right = pygame.transform.scale(atom_H_diagonal_down_right, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_diagonal_down_right = pygame.transform.scale(atom_H_diagonal_down_right, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_H_diagonal_up_right = pygame.image.load("assets/sprites/H_diagonal_up_right.png")
+atom_H_diagonal_up_right = pygame.transform.scale(atom_H_diagonal_up_right, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_H_diagonal_up_right = pygame.transform.scale(atom_H_diagonal_up_right, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+# Oxigen
+
+atom_O_left_rigth = pygame.image.load("assets/sprites/O_left_right.png")
+atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_O_left_rigth = pygame.transform.scale(atom_O_left_rigth, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_O_up_down = pygame.image.load("assets/sprites/O_up_down.png")
+atom_O_up_down = pygame.transform.scale(atom_O_up_down, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_O_up_down = pygame.transform.scale(atom_O_up_down, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_O_double_left = pygame.image.load("assets/sprites/O_double_left.png")
+atom_O_double_left = pygame.transform.scale(atom_O_double_left, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_O_double_left= pygame.transform.scale(atom_O_double_left, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_O_double_up= pygame.image.load("assets/sprites/O_double_up.png")
+atom_O_double_up = pygame.transform.scale(atom_O_double_up, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_O_double_up = pygame.transform.scale(atom_O_double_up, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+# Carbon
+
 atom_C_cross = pygame.image.load("assets/sprites/C_cross.png")
 atom_C_cross = pygame.transform.scale(atom_C_cross, (SQUARE_SIZE, SQUARE_SIZE))
 molecule_atom_C_cross = pygame.transform.scale(atom_C_cross, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_C_double_down = pygame.image.load("assets/sprites/C_double_down.png")
+atom_C_double_down = pygame.transform.scale(atom_C_double_down, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_C_double_down = pygame.transform.scale(atom_C_double_down, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_C_right_diagonal = pygame.image.load("assets/sprites/C_double_right_diagonal.png")
+atom_C_right_diagonal = pygame.transform.scale(atom_C_right_diagonal, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_C_right_diagonal = pygame.transform.scale(atom_C_right_diagonal, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_C_double_left_diagonal = pygame.image.load("assets/sprites/C_double_left_diagonal.png")
+atom_C_double_left_diagonal = pygame.transform.scale(atom_C_double_left_diagonal, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_C_double_left_diagonal = pygame.transform.scale(atom_C_double_left_diagonal, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+atom_C_double_right = pygame.image.load("assets/sprites/C_double_right.png")
+atom_C_double_right = pygame.transform.scale(atom_C_double_right, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_atom_C_double_right = pygame.transform.scale(atom_C_double_right, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+# Bottles
+
+bottle_0 = pygame.image.load("assets/sprites/bottle_0.png")
+bottle_0 = pygame.transform.scale(bottle_0, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_0 = pygame.transform.scale(bottle_0, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_1 = pygame.image.load("assets/sprites/bottle_1.png")
+bottle_1 = pygame.transform.scale(bottle_1, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_1 = pygame.transform.scale(bottle_1, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_2 = pygame.image.load("assets/sprites/bottle_2.png")
+bottle_2 = pygame.transform.scale(bottle_2, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_2 = pygame.transform.scale(bottle_2, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_3 = pygame.image.load("assets/sprites/bottle_3.png")
+bottle_3 = pygame.transform.scale(bottle_3, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_3 = pygame.transform.scale(bottle_3, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_4 = pygame.image.load("assets/sprites/bottle_4.png")
+bottle_4 = pygame.transform.scale(bottle_4, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_4 = pygame.transform.scale(bottle_4, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_5 = pygame.image.load("assets/sprites/bottle_5.png")
+bottle_5 = pygame.transform.scale(bottle_5, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_5 = pygame.transform.scale(bottle_5, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_6 = pygame.image.load("assets/sprites/bottle_6.png")
+bottle_6 = pygame.transform.scale(bottle_6, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_6 = pygame.transform.scale(bottle_6, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
+
+bottle_7 = pygame.image.load("assets/sprites/bottle_7.png")
+bottle_7 = pygame.transform.scale(bottle_7, (SQUARE_SIZE, SQUARE_SIZE))
+molecule_bottle_7 = pygame.transform.scale(bottle_7, (MOLECULE_SQUARE_SIZE, MOLECULE_SQUARE_SIZE))
 
 # Players
 
@@ -126,7 +210,7 @@ molecule_level_2 = [[-1, 0,-1],
 atoms_list_level_2 = [Atom(0,9,4), Atom(1,2,5), Atom(2,5,4), Atom(3,8,8), Atom(4,3,9)]
 
 sprites_level_2 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_H_left, atom_H_up]
-molecule_sprites_level_2 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_H_left, atom_H_up]
+molecule_sprites_level_2 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_H_left, molecule_atom_H_up]
 
 #Level 3
 
@@ -150,7 +234,8 @@ molecule_level_3 = [[-1, 0,-1,-1],
 
 atoms_list_level_3 = [Atom(0,2,3), Atom(1,2,8), Atom(2,9,7), Atom(3,6,8), Atom(4,8,10), Atom(5,5,10)]
 
-sprites_level_3 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
+sprites_level_3 = [atom_H_down, atom_H_rigth, atom_C_cross, atom_O_left_rigth, atom_H_left, atom_H_up]
+molecule_sprites_level_3 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_O_left_rigth, molecule_atom_H_left, molecule_atom_H_up]
 
 #Level 4
 
@@ -177,12 +262,8 @@ atoms_list_level_4 = [Atom(0,5,9), Atom(1,7,7), Atom(2,5,7), Atom(3,2,7), Atom(4
 
 timeout_level_4 = 360
 
-atom_H_leftdown = pygame.transform.rotate(atom_H_left, 45)
-atom_H_leftup = pygame.transform.rotate(atom_H_up, 45)
-atom_H_rightdown = pygame.transform.rotate(atom_H_down, 45)
-atom_H_rightup = pygame.transform.rotate(atom_H_rigth, 45)
-
-sprites_level_4 = [atom_H_rightdown, atom_H_leftdown, atom_O_left_rigth, atom_O_left_rigth, atom_H_rightup, atom_H_leftup]
+sprites_level_4 = [atom_H_diagonal_down_right, atom_H_diagonal_down_left, atom_C_right_diagonal, atom_C_double_left_diagonal, atom_H_diagonal_up_right, atom_H_diagonal_up_left]
+molecule_sprites_level_4 = [molecule_atom_H_diagonal_down_right, molecule_atom_H_diagonal_down_left, molecule_atom_C_right_diagonal, molecule_atom_C_double_left_diagonal, molecule_atom_H_diagonal_up_right, molecule_atom_H_diagonal_up_left]
 
 #Level 5
 
@@ -206,8 +287,8 @@ molecule_level_5 = [[-1, 0, 0,-1, 1],
 
 atoms_list_level_5 = [Atom(0,5,3), Atom(0,10,7), Atom(1,8,2), Atom(2,3,6), Atom(3,8,6), Atom(4,3,4), Atom(5,11,5), Atom(6,9, 11), Atom(7,1,11)]
 
-sprites_level_5 = [atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up, atom_H_leftup, atom_H_leftup]
-molecule_sprites_level_5 = [atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up, atom_H_leftup]
+sprites_level_5 = [atom_H_down, atom_H_diagonal_down_left, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_C_double_left_diagonal, atom_H_up, atom_H_diagonal_up_left, atom_H_diagonal_up_left]
+molecule_sprites_level_5 = [molecule_atom_H_down, molecule_atom_H_diagonal_down_left, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_right, molecule_atom_C_double_left_diagonal, molecule_atom_H_up, molecule_atom_H_diagonal_up_left]
 
 #Level 6
 
@@ -224,7 +305,8 @@ molecule_level_6 = [[0, 1, 2],
 
 atoms_list_level_6 = [Atom(0,1,3), Atom(1,4,1), Atom(2,3,4), Atom(3,2,1), Atom(4,4,3), Atom(5,1,4), Atom(6,2,2), Atom(7,3,2)]
 
-sprites_level_6 = [atom_H_rightdown, atom_H_down, atom_H_leftdown, atom_H_rigth, atom_O_left_rigth, atom_H_left, atom_H_rightup, atom_H_up]
+sprites_level_6 = [bottle_0, bottle_1, bottle_2, bottle_3, bottle_4, bottle_5, bottle_6, bottle_7]
+molecule_sprites_level_6 = [molecule_bottle_0, molecule_bottle_1, molecule_bottle_2, molecule_bottle_3, molecule_bottle_4, molecule_bottle_5, molecule_bottle_6, molecule_bottle_7]
 
 #Level 7
 
@@ -243,12 +325,13 @@ matrix_level_7 = [[-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-3,-3],
                   [-2,-2,-2,-2,-2,-2,-2,-2,-2,-3,-3,-3,-3]]
 
 molecule_level_7 = [[-1, 0, 0,-1,-1],
-                    [ 1, 2, 3, 4, 5],
-                    [-1, 6, 6,-1,-1]]
+                    [ 1, 2, 2, 3, 4],
+                    [-1, 5, 5,-1,-1]]
 
-atoms_list_level_7 = [Atom(0,3,1), Atom(0,9,9), Atom(1,2,9), Atom(2,6,3), Atom(3,8,5), Atom(4,5,8), Atom(5,3,5), Atom(6,6,10), Atom(6,4,11)]
+atoms_list_level_7 = [Atom(0,3,1), Atom(0,9,9), Atom(1,2,9), Atom(2,6,3), Atom(2,8,5), Atom(3,5,8), Atom(4,3,5), Atom(5,6,10), Atom(5,4,11)]
 
-sprites_level_7 = [ atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
+sprites_level_7 = [ atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_cross, atom_O_left_rigth, atom_H_left, atom_H_up, atom_H_up]
+molecule_sprites_level_7 = [ molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_O_left_rigth, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_H_up, molecule_atom_H_up]
 
 #Level 8
 
@@ -273,9 +356,8 @@ molecule_level_8 = [[-1, 0, 0, 0,-1],
 
 atoms_list_level_8 = [Atom(0,8,1), Atom(0,2,4), Atom(0,9,7), Atom(1,3,10), Atom(2,2,8), Atom(2,7,10), Atom(2,9,5), Atom(3,9,9), Atom(4,4,4), Atom(5,6,3), Atom(4,7,5), Atom(4,7,9)]
 
-atom_O_up_down = pygame.transform.rotate(atom_O_left_rigth, 90)
-
-sprites_level_8 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_H_left, atom_H_up]
+sprites_level_8 = [atom_H_down, atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross,  atom_C_cross, atom_C_cross, atom_H_left, atom_H_up, atom_O_up_down, atom_H_up, atom_H_up]
+molecule_sprites_level_8 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_O_up_down, molecule_atom_H_up]
 
 #Level 9
 
@@ -297,7 +379,8 @@ molecule_level_9 = [[-1, 0, 0,-1],
 
 atoms_list_level_9 = [Atom(0,8,5), Atom(0,6,3), Atom(1,2,5), Atom(2,6,4), Atom(3,4,7), Atom(4,7,1), Atom(5,5,5)]
 
-sprites_level_9 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_up]
+sprites_level_9 = [atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_double_right, atom_O_double_left, atom_H_up]
+molecule_sprites_level_9 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_right, molecule_atom_O_double_left, molecule_atom_H_up]
 
 #Level 10
 
@@ -320,20 +403,20 @@ molecule_level_10 = [[-1, 0,-1, 0,-1],
 
 atoms_list_level_10 = [Atom(0,7,3), Atom(0,9,5), Atom(1,4,9), Atom(2,6,7), Atom(3,8,7), Atom(2,10,5), Atom(4,9,2), Atom(5,3,1), Atom(6,9,8), Atom(5,3,3)]
 
-sprites_level_10 = [atom_H_down, atom_H_rigth, atom_O_left_rigth, atom_O_left_rigth, atom_H_left, atom_H_up, atom_O_up_down]
-
+sprites_level_10 = [atom_H_down, atom_H_down, atom_H_rigth, atom_C_cross, atom_C_double_down, atom_C_cross, atom_H_left, atom_H_up, atom_O_double_up, atom_H_up]
+molecule_sprites_level_10 = [molecule_atom_H_down, molecule_atom_H_rigth, molecule_atom_C_cross, molecule_atom_C_double_down, molecule_atom_H_left, molecule_atom_H_up, molecule_atom_O_double_up]
 
 # Levels list
 level_1 = Level(matrix_level_1, molecule_level_1, atoms_list_level_1, timeout_level_1, sprites_level_1, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
 level_2 = Level(matrix_level_2, molecule_level_2, atoms_list_level_2, timeout_level_1, sprites_level_2, molecule_sprites_level_2, background_window_level_1, background_matrix_level_1)
-level_3 = Level(matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_1, sprites_level_3, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_4 = Level(matrix_level_4, molecule_level_4, atoms_list_level_4, timeout_level_4, sprites_level_4, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
+level_3 = Level(matrix_level_3, molecule_level_3, atoms_list_level_3, timeout_level_1, sprites_level_3, molecule_sprites_level_3, background_window_level_1, background_matrix_level_1)
+level_4 = Level(matrix_level_4, molecule_level_4, atoms_list_level_4, timeout_level_4, sprites_level_4, molecule_sprites_level_4, background_window_level_1, background_matrix_level_1)
 level_5 = Level(matrix_level_5, molecule_level_5, atoms_list_level_5, timeout_level_4, sprites_level_5, molecule_sprites_level_5, background_window_level_1, background_matrix_level_1)
-level_6 = Level(matrix_level_6, molecule_level_6, atoms_list_level_6, timeout_level_1, sprites_level_6, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_7 = Level(matrix_level_7, molecule_level_7, atoms_list_level_7, timeout_level_4, sprites_level_7, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_8 = Level(matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_level_4, sprites_level_8, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_9 = Level(matrix_level_9, molecule_level_9, atoms_list_level_9, timeout_level_4, sprites_level_9, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
-level_10 = Level(matrix_level_10, molecule_level_10, atoms_list_level_10, timeout_level_4, sprites_level_10, molecule_sprites_level_1, background_window_level_1, background_matrix_level_1)
+level_6 = Level(matrix_level_6, molecule_level_6, atoms_list_level_6, timeout_level_1, sprites_level_6, molecule_sprites_level_6, background_window_level_1, background_matrix_level_1)
+level_7 = Level(matrix_level_7, molecule_level_7, atoms_list_level_7, timeout_level_4, sprites_level_7, molecule_sprites_level_7, background_window_level_1, background_matrix_level_1)
+level_8 = Level(matrix_level_8, molecule_level_8, atoms_list_level_8, timeout_level_4, sprites_level_8, molecule_sprites_level_8, background_window_level_1, background_matrix_level_1)
+level_9 = Level(matrix_level_9, molecule_level_9, atoms_list_level_9, timeout_level_4, sprites_level_9, molecule_sprites_level_9, background_window_level_1, background_matrix_level_1)
+level_10 = Level(matrix_level_10, molecule_level_10, atoms_list_level_10, timeout_level_4, sprites_level_10, molecule_sprites_level_10, background_window_level_1, background_matrix_level_1)
 
 levels = [level_1, level_2, level_3, level_4, level_5, level_6, level_7, level_8, level_9, level_10] 
 
